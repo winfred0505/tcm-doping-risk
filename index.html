@@ -3,127 +3,521 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>運動禁忌：中藥對運動員可能的禁藥風險</title>
+  <title>運動員使用中藥之運動禁藥風險與防範指引簡報</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/night.css" />
-  <!-- WordCloud2.js for interactive wordcloud -->
-  <script src="https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Outfit:wght@400;600;800&display=swap" />
   <style>
-    /* === 全域變數與暗色/玻璃擬態主題 === */
+    /* === 全域變數與主題色 === */
     :root {
-      --accent:  #e8643a;   /* 橘紅 (主強調) */
-      --accent2: #4fc3f7;   /* 青 (次強調) */
-      --success: #81c784;   /* 綠 (安全/正面) */
-      --warn:    #ffb74d;   /* 琥珀 (警告/提示) */
+      --accent-orange: #ff6b35;
+      --accent-cyan: #4fc3f7;
+      --accent-neon: #00f5ff;
+      --accent-green: #81c784;
+      --accent-yellow: #ffb74d;
+      --bg-dark: #0f111a;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     }
 
     .reveal {
-      font-family: 'Segoe UI', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+      font-family: 'Outfit', 'Noto Sans TC', sans-serif;
+      background: var(--bg-dark);
+      background-image: 
+        radial-gradient(at 10% 20%, rgba(244, 143, 177, 0.03) 0px, transparent 50%),
+        radial-gradient(at 90% 80%, rgba(79, 195, 247, 0.04) 0px, transparent 50%);
     }
-    .reveal h1, .reveal h2, .reveal h3 {
-      font-family: 'Segoe UI', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
-      font-weight: 700;
-      letter-spacing: -0.02em;
+
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+      font-family: 'Outfit', 'Noto Sans TC', sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      text-transform: none;
     }
-    .reveal h1 { font-size: 2.0em; text-shadow: 0 0 20px rgba(232, 100, 58, 0.4); }
-    .reveal h2 { font-size: 1.4em; color: var(--accent2); text-shadow: 0 0 15px rgba(79, 195, 247, 0.3); margin-bottom: 0.6em; }
-    .reveal h3 { font-size: 0.9em; }
-    .reveal .progress { color: var(--accent); }
-    .reveal .controls { color: var(--accent2); }
+
+    .reveal h1 {
+      font-size: 2.2em;
+      text-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+    }
+
+    .reveal h2 {
+      font-size: 1.6em;
+      color: var(--accent-cyan);
+      margin-bottom: 0.6em;
+      position: relative;
+      display: inline-block;
+    }
+
+    .reveal h2::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 15%;
+      width: 70%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+    }
+
+    .reveal h3 {
+      font-size: 1.1em;
+      color: #fff;
+    }
+
+    .reveal .progress {
+      background: rgba(255,255,255,0.1);
+      height: 5px;
+    }
+    .reveal .progress span {
+      background: linear-gradient(90deg, var(--accent-orange), var(--accent-cyan));
+    }
+
+    .reveal .controls {
+      color: var(--accent-cyan);
+    }
+
+    /* === 玻璃貼卡片風格 === */
+    .glass-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      backdrop-filter: blur(8px);
+      box-shadow: var(--glass-shadow);
+      margin-top: 10px;
+      text-align: left;
+    }
 
     /* === 封面樣式 === */
-    .title-slide { text-align: center; }
-    .title-slide .tag {
+    .title-slide {
+      text-align: center;
+      position: relative;
+    }
+
+    .title-slide .badge {
       display: inline-block;
-      background: var(--accent);
+      background: linear-gradient(135deg, var(--accent-orange), #ff4f00);
       color: #fff;
       padding: 6px 16px;
-      border-radius: 20px;
+      border-radius: 30px;
       font-size: 0.5em;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.8em;
-      font-weight: 600;
-      box-shadow: 0 0 12px rgba(232, 100, 58, 0.5);
+      letter-spacing: 0.1em;
+      margin-bottom: 1.2em;
+      font-weight: 700;
+      box-shadow: 0 0 15px rgba(255, 107, 53, 0.4);
     }
-    .title-slide .subtitle { font-size: 0.7em; color: #ccc; margin-top: 0.4em; }
-    .title-slide .author { margin-top: 2.2em; font-size: 0.45em; color: #888; }
 
-    /* === 3欄/4欄優勢與警告卡 (Glassmorphism) === */
-    .adv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 0.6em; }
-    .adv-grid.two-cols { grid-template-columns: 1fr 1fr; gap: 24px; max-width: 800px; margin: 0.6em auto 0 auto; }
-    .adv-card {
-      background: rgba(255, 255, 255, 0.04);
-      border-top: 4px solid var(--accent2);
-      border-radius: 10px;
+    .title-slide .subtitle {
+      font-size: 0.75em;
+      color: #ccc;
+      margin-top: 0.4em;
+      font-weight: 400;
+    }
+
+    .title-slide .info-footer {
+      margin-top: 2.2em;
+      font-size: 0.45em;
+      color: #778;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 20px;
+    }
+
+    .title-slide .info-footer span strong {
+      color: #fff;
+    }
+
+    /* === 網格與排版 === */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    /* === 清單與重點標示 === */
+    .reveal ul.custom-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 0.55em;
+      color: #ddd;
+    }
+
+    .reveal ul.custom-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .reveal ul.custom-list li::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-orange);
+      box-shadow: 0 0 8px var(--accent-orange);
+    }
+
+    .reveal ul.custom-list li strong {
+      color: #fff;
+    }
+
+    .icon-title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .icon-title-row svg {
+      width: 28px;
+      height: 28px;
+      fill: var(--accent-cyan);
+      filter: drop-shadow(0 0 6px var(--accent-cyan));
+    }
+
+    .icon-title-row h3 {
+      margin: 0;
+      font-size: 0.85em;
+    }
+
+    /* === VS 對比表格 === */
+    .vs-container {
+      display: grid;
+      grid-template-columns: 1fr 50px 1fr;
+      margin-top: 15px;
+      align-items: center;
+    }
+
+    .vs-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
       padding: 20px;
+      text-align: left;
+    }
+
+    .vs-box.left {
+      border-left: 4px solid var(--accent-cyan);
+    }
+
+    .vs-box.right {
+      border-left: 4px solid var(--accent-orange);
+    }
+
+    .vs-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.45em;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .vs-badge.left {
+      background: rgba(79, 195, 247, 0.15);
+      color: var(--accent-cyan);
+    }
+
+    .vs-badge.right {
+      background: rgba(255, 107, 53, 0.15);
+      color: var(--accent-orange);
+    }
+
+    .vs-center {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 1.2em;
+      color: rgba(255,255,255,0.15);
+      text-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    /* === 互動模擬器一：嚴格責任投標 === */
+    .poll-container {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 22px;
+      text-align: left;
+    }
+
+    .poll-title {
+      font-size: 0.52em;
+      color: #eee;
+      line-height: 1.5;
+      margin-bottom: 18px;
+      border-left: 3px solid var(--accent-cyan);
+      padding-left: 10px;
+    }
+
+    .poll-option-btn {
+      display: block;
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.46em;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    .poll-option-btn:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .poll-option-btn .progress-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0%;
+      background: rgba(79, 195, 247, 0.15);
+      transition: width 0.6s cubic-bezier(0.1, 0.8, 0.2, 1);
+      z-index: 1;
+    }
+
+    .poll-option-btn .text-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .poll-option-btn .pct-val {
+      font-weight: 700;
+      color: var(--accent-cyan);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .poll-info {
+      font-size: 0.36em;
+      color: #667;
       text-align: center;
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(4px);
-      border-left: 1px solid rgba(255, 255, 255, 0.05);
-      border-right: 1px solid rgba(255, 255, 255, 0.05);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      transition: transform 0.3s ease, background 0.3s ease;
+      margin-top: 10px;
     }
-    .adv-card:hover {
-      background: rgba(255, 255, 255, 0.08);
-      transform: translateY(-5px);
-    }
-    .adv-card.warn-card {
-      border-top: 4px solid var(--warn);
-    }
-    .adv-card .adv-icon { margin-bottom: 12px; }
-    .adv-card .adv-icon img {
-      width: 64px; height: 64px; object-fit: contain;
-      display: block; margin: 0 auto;
-      filter: drop-shadow(0 0 8px rgba(79,195,247,0.5));
-    }
-    .adv-card.warn-card .adv-icon img {
-      filter: drop-shadow(0 0 8px rgba(255,183,77,0.5));
-    }
-    .adv-card .adv-title { font-size: 0.55em; font-weight: 700; color: var(--accent2); margin-bottom: 8px; }
-    .adv-card.warn-card .adv-title { color: var(--warn); }
-    .adv-card .adv-desc { font-size: 0.42em; color: #bbb; line-height: 1.6; text-align: left; }
 
-    /* === 時間軸 / 步驟樣式 === */
-    .timeline { position: relative; padding-left: 36px; margin-top: 0.8em; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; }
-    .timeline::before {
-      content: ''; position: absolute; left: 14px; top: 4px; bottom: 4px;
-      width: 2px; background: rgba(79, 195, 247, 0.3);
-      box-shadow: 0 0 8px rgba(79, 195, 247, 0.2);
+    /* === 互動模擬器二：去甲烏藥鹼清除率 === */
+    .simulator-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+      margin-top: 10px;
     }
-    .timeline-item { position: relative; margin-bottom: 24px; font-size: 0.48em; }
-    .timeline-item::before {
-      content: ''; position: absolute; left: -27px; top: 4px;
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--accent2); border: 2px solid #1a1a2e;
-      box-shadow: 0 0 8px var(--accent2);
-    }
-    .timeline-item .ti-date { color: var(--accent2); font-weight: 700; font-size: 1.1em; margin-bottom: 4px; }
-    .timeline-item .ti-text { color: #ccc; line-height: 1.6; }
 
-    /* === 封底樣式 === */
-    .end-slide { text-align: center; }
-    .end-slide .tagline { font-size: 0.7em; color: #aaa; margin-top: 0.5em; }
-
-    /* === LIVE 閃爍標誌 === */
-    .live-badge {
-      display: inline-block; background: #ff4757; color: #fff; padding: 2px 7px;
-      border-radius: 10px; font-size: 0.85em; font-weight: 700; animation: pulse 1.5s infinite;
-      vertical-align: middle; margin-left: 6px;
+    .control-panel {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 20px;
     }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
 
-    /* === 投票按鈕樣式 === */
-    .poll-opt-btn {
-      width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; color: #fff;
-      font-size: 0.48em; cursor: pointer; font-family: inherit; text-align: left;
-      transition: background 0.2s, border-color 0.2s;
+    .slider-group {
+      margin-bottom: 20px;
     }
-    .poll-opt-btn:hover {
+
+    .slider-label {
+      font-size: 0.44em;
+      color: #aaa;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .slider-label strong {
+      color: #fff;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
       background: rgba(255,255,255,0.1);
-      border-color: var(--accent2);
+      border-radius: 3px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      cursor: pointer;
+      box-shadow: 0 0 10px var(--accent-cyan);
+      transition: transform 0.1s;
+    }
+
+    .custom-range::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    .data-panel {
+      background: rgba(0,0,0,0.2);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .big-stat {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2em;
+      font-weight: 800;
+      color: var(--accent-orange);
+      line-height: 1.1;
+      text-shadow: 0 0 15px rgba(255, 107, 53, 0.2);
+    }
+
+    .big-stat span {
+      font-size: 0.4em;
+      color: #889;
+      font-weight: 400;
+      margin-left: 4px;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.45em;
+      font-weight: 700;
+      margin-top: 10px;
+      letter-spacing: 0.05em;
+    }
+
+    .status-badge.danger {
+      background: rgba(255, 71, 87, 0.15);
+      color: #ff4757;
+      border: 1px solid rgba(255, 71, 87, 0.3);
+      box-shadow: 0 0 10px rgba(255, 71, 87, 0.2);
+    }
+
+    .status-badge.safe {
+      background: rgba(46, 213, 115, 0.15);
+      color: #2ed573;
+      border: 1px solid rgba(46, 213, 115, 0.3);
+    }
+
+    .sim-desc {
+      font-size: 0.36em;
+      color: #778;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    /* === 藥材與數值展示卡 === */
+    .stat-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+      flex: 1;
+    }
+
+    .stat-card .title {
+      font-size: 0.46em;
+      font-weight: 700;
+      color: #bbb;
+      margin-bottom: 4px;
+    }
+
+    .stat-card .val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2em;
+      font-weight: 800;
+      color: var(--accent-orange);
+    }
+
+    .stat-card .unit {
+      font-size: 0.4em;
+      color: #889;
+      font-weight: 400;
+      margin-left: 2px;
+    }
+
+    .stat-card .risk {
+      font-size: 0.32em;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+
+    .stat-card .risk.high { background: rgba(255, 71, 87, 0.15); color: #ff4757; }
+    .stat-card .risk.mid { background: rgba(255, 183, 77, 0.15); color: #ffb74d; }
+
+    /* === 結尾樣式 === */
+    .ending-slide {
+      text-align: center;
+    }
+
+    .ending-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(79, 195, 247, 0.1);
+      border: 2px solid var(--accent-cyan);
+      box-shadow: 0 0 24px rgba(79, 195, 247, 0.4);
+      margin-bottom: 1.2em;
+    }
+
+    .ending-logo svg {
+      width: 44px;
+      height: 44px;
+      fill: var(--accent-cyan);
+    }
+
+    .ending-slide h1 {
+      font-size: 2.2em;
+      background: linear-gradient(135deg, #fff 40%, var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.3em;
+    }
+
+    .ending-slide p.subtitle {
+      font-size: 0.6em;
+      color: #889;
+      letter-spacing: 0.05em;
     }
   </style>
 </head>
@@ -131,212 +525,339 @@
 <div class="reveal">
   <div class="slides">
 
-    <!-- 1. 封面 -->
-    <section id="slide-cover"
-             data-background-image="images/cover.png"
-             data-background-opacity="0.35"
-             data-background-size="cover">
+    <!-- Slide 1: 封面 -->
+    <section>
       <div class="title-slide">
-        <div class="tag">運動禁藥防護講堂</div>
-        <h1>運動禁忌：中藥可能的禁藥風險</h1>
-        <p class="subtitle">守護運動生涯，釐清「天然無害」的用藥盲區</p>
-        <p class="author">Antigravity 講堂 · 2026</p>
+        <div class="badge">2026 世界運動禁藥管制規範基準</div>
+        <h1>運動員使用中藥之運動禁藥風險</h1>
+        <div class="subtitle">跨界植物來源、臨床排除代謝與安全避雷防護指引</div>
+        <div class="info-footer">
+          <span>簡報編譯：<strong>AntiGravity AI</strong></span>
+          <span>資料來源：<strong>NotebookLM 筆記本 & 權威文件</strong></span>
+        </div>
       </div>
     </section>
 
-    <!-- 2. 破冰互動文字雲 -->
-    <section id="slide-wordcloud">
-      <h2 style="font-size:1.1em; margin-bottom:0.4em;">您腦中浮現的直覺印象是什麼？</h2>
-      <p style="font-size:0.45em; color:#aaa; margin-top:0px; margin-bottom:12px;">提到「中藥與運動禁藥」，您直覺會聯想到什麼藥材、症狀或觀點？</p>
-      <div style="display:grid; grid-template-columns:260px 1fr; gap:16px; height:440px;">
-        <!-- 左欄：輸入與提交排行 -->
-        <div style="display:flex; flex-direction:column; gap:10px;">
-          <div style="background:rgba(255,255,255,0.06); border-radius:10px; padding:12px;">
-            <div style="font-size:0.38em; color:var(--accent2); font-weight:700; margin-bottom:8px;">填寫您的想法</div>
-            <input id="wc-input" type="text" placeholder="例如：葛根湯, 麻黃, 補品…" maxlength="20"
-              style="width:100%; padding:8px 12px; border-radius:8px; border:1px solid rgba(79,195,247,0.3);
-                     background:rgba(255,255,255,0.08); color:#fff; font-size:13px;
-                     box-sizing:border-box; font-family:inherit; outline:none;" />
-            <button id="wc-btn"
-              style="width:100%; margin-top:8px; padding:9px; background:var(--accent2); color:#0d1117;
-                     border:none; border-radius:8px; font-weight:700; font-size:13px; cursor:pointer;">
-              送出答案 ↵
+    <!-- Slide 2: 嚴格責任原則 -->
+    <section>
+      <h2>一、 WADA 核心法理：嚴格責任原則</h2>
+      <div class="grid-2">
+        <div class="glass-card">
+          <div class="icon-title-row">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h-2v-2h4v8zm0-10h-2V5h-2V3h4v4z"/></svg>
+            <h3>嚴格責任 (Strict Liability)</h3>
+          </div>
+          <ul class="custom-list">
+            <li><strong>客觀事實判定</strong>：只要運動員的生物樣本（尿/血）檢出禁用物質，即構成違規。</li>
+            <li><strong>無主觀意圖要求</strong>：無論故意、過失、疏忽或被動受污染，皆不影響違規之判定。</li>
+            <li><strong>法律後果</strong>：面臨取消資格、收回獎牌、並被禁賽數年。</li>
+          </ul>
+        </div>
+        <div>
+          <!-- 投票互動元件 -->
+          <div class="poll-container">
+            <div class="poll-title">
+              <strong>【隨堂互動】</strong> 運動員因感冒求診，服用中醫師開立之處方中草藥，卻在藥檢呈去甲烏藥鹼陽性，是否能主張「中醫師開立」而免除禁賽責任？
+            </div>
+            <button class="poll-option-btn" onclick="vote(1)">
+              <div class="progress-bar" id="pb-1"></div>
+              <div class="text-content">
+                <span>A：可以，因為遵從醫囑服用天然藥物，無主觀故意。</span>
+                <span class="pct-val" id="pv-1">0%</span>
+              </div>
             </button>
-          </div>
-          <div style="background:rgba(255,255,255,0.06); border-radius:10px; padding:12px; flex:1; overflow:hidden; display:flex; flex-direction:column;">
-            <div style="font-size:0.38em; color:var(--accent2); font-weight:700; margin-bottom:8px;">
-              熱門答案 <span class="live-badge">LIVE</span>
+            <button class="poll-option-btn" onclick="vote(2)">
+              <div class="progress-bar" id="pb-2"></div>
+              <div class="text-content">
+                <span>B：不可以，基於「嚴格責任原則」，選手須負完全責任。</span>
+                <span class="pct-val" id="pv-2">0%</span>
+              </div>
+            </button>
+            <div class="poll-info">
+              投票統計：共 <span id="poll-votes">0</span> 票 (請點擊選項進行互動模擬)
             </div>
-            <div id="wc-list" style="font-size:0.34em; overflow-y:auto; flex:1; color:#ccc;"></div>
-            <div style="margin-top:8px; font-size:0.32em; color:#666; border-top:1px solid rgba(255,255,255,0.08); padding-top:6px;">
-              總提交：<span id="wc-total" style="color:var(--accent); font-weight:700;">0</span>　
-              獨立答案：<span id="wc-unique" style="color:var(--accent2); font-weight:700;">0</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 右欄：文字雲畫布 -->
-        <div style="background:rgba(255,255,255,0.04); border-radius:12px; overflow:hidden;
-                    position:relative; border:1px solid rgba(255,255,255,0.07);">
-          <canvas id="wc-canvas" style="width:100%; height:100%; display:block;"></canvas>
-          <div id="wc-empty" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-                                     color:#555; font-size:0.42em; text-align:center;
-                                     pointer-events:none; line-height:2;">
-            現場輸入第一個答案<br>文字雲即時繪製 ✨
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. 三大盲區 -->
-    <section id="slide-blindspots">
-      <h2>「天然中藥」安全無害的認知盲區</h2>
-      <div class="adv-grid">
-        <div class="adv-card fragment" data-fragment-index="1">
-          <div class="adv-icon"><img src="images/icon_complex.png" alt="成分複雜"></div>
-          <div class="adv-title">成分極度複雜</div>
-          <div class="adv-desc">天然中草藥多為複方，單一藥材內含成百上千種化學物質，難以用單一指標全面監控所有的活性成分與代謝物。</div>
-        </div>
-        <div class="adv-card fragment" data-fragment-index="2">
-          <div class="adv-icon"><img src="images/icon_label.png" alt="標示不明"></div>
-          <div class="adv-title">中藥包裝標示不全</div>
-          <div class="adv-desc">許多傳統藥膳、強身補品或草藥包裝，僅標示大類名稱，並未列出具體的天然化學分子，使運動員在不知情下誤服違禁成分。</div>
-        </div>
-        <div class="adv-card fragment" data-fragment-index="3">
-          <div class="adv-icon"><img src="images/icon_process.png" alt="產地炮製"></div>
-          <div class="adv-title">產地炮製差異波動</div>
-          <div class="adv-desc">相同的藥材在不同產地、採收季節或炮製工藝下，其所含的天然化學成分濃度可能大幅波動，增加誤觸禁藥界限的風險。</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. 滑桿視覺化演示 -->
-    <section id="slide-detection">
-      <h2>體內代謝與精密檢測的對比</h2>
-      <p style="font-size:0.45em; color:#aaa; margin-top:0px; margin-bottom:12px;">拉動滑動條，從傳統的主觀偏見揭露現代運動禁藥檢驗的科學真相：</p>
-      
-      <div style="position:relative; height:360px; border-radius:12px; overflow:hidden;">
-        <!-- Before: 認知偏見 -->
-        <div id="viz-before" style="position:absolute;inset:0; background:rgba(255,183,77,0.06); border:1px solid rgba(255,183,77,0.2); border-radius:12px; padding:30px; text-align:left; display:flex; flex-direction:column; justify-content:center;">
-          <h3 style="color:var(--warn); margin:0 0 10px 0; font-size:1.1em;">傳統主觀偏見 (認為安全)</h3>
-          <ul style="font-size:0.55em; line-height:1.8; color:#ddd; margin:0; padding-left:20px;">
-            <li>直覺認為「中藥溫和，藥性慢，不會像西藥那樣強烈顯著」。</li>
-            <li>以為日常飲食中的中藥成分劑量極低，在體內代謝幾天就不會留下痕跡。</li>
-            <li>普遍缺乏防護警覺，認為草本藥膳、茶飲不可能被化驗出來。</li>
+    <!-- Slide 3: 禁用分類 -->
+    <section>
+      <h2>二、 運動禁藥禁用分類</h2>
+      <div class="vs-container">
+        <div class="vs-box left">
+          <div class="vs-badge left">賽內與賽外 (全時段禁用)</div>
+          <ul class="custom-list">
+            <li><strong>S1 同化性物質</strong>：如類固醇、<strong>麝香</strong> (Androstane 類)</li>
+            <li><strong>S2 肽類荷爾蒙與生長因子</strong>：如 EPO、<strong>初乳</strong> (IGF-1)</li>
+            <li><strong>S3 $\beta_2$ 致效劑</strong>：如<strong>去甲烏藥鹼</strong> (Higenamine)</li>
+            <li><strong>S4 荷爾蒙調節劑</strong>：如<strong>紫河車</strong> (胎盤荷爾蒙)</li>
+            <li><strong>S5 利尿劑與遮蔽劑</strong>：加速排泄或稀釋尿液</li>
           </ul>
         </div>
-        
-        <!-- After: 檢測真相 -->
-        <div id="viz-after" style="position:absolute;inset:0; background:rgba(79,195,247,0.06); border:1px solid rgba(79,195,247,0.2); border-radius:12px; padding:30px; text-align:left; display:flex; flex-direction:column; justify-content:center; clip-path:inset(0 100% 0 0);">
-          <h3 style="color:var(--accent2); margin:0 0 10px 0; font-size:1.1em;">現代精準檢測 (零容忍)</h3>
-          <ul style="font-size:0.55em; line-height:1.8; color:#ddd; margin:0; padding-left:20px;">
-            <li>WADA 認證實驗室使用高解析度液相層析質譜儀 (LC-HRMS)，靈敏度達 <strong>ppb（十億分之一）</strong> 級別。</li>
-            <li>即使僅服用了極微量的去甲烏藥鹼或麻黃鹼，在尿液中也能在數天甚至數週後被精準檢出。</li>
-            <li><strong>嚴格責任制原則</strong>：不論是否蓄意、不論劑量多寡，只要檢測出陽性即構成禁藥違規。</li>
+        <div class="vs-center">VS</div>
+        <div class="vs-box right">
+          <div class="vs-badge right">僅比賽期間 (賽內禁用)</div>
+          <ul class="custom-list">
+            <li><strong>S6 興奮劑</strong>：如<strong>麻黃</strong> (麻黃鹼)、<strong>半夏</strong> (L-麻黃鹼)、<strong>馬錢子</strong> (番木鼈鹼)</li>
+            <li><strong>S7 麻醉劑</strong>：強效止痛藥物</li>
+            <li><strong>S8 大麻素</strong>：如四氫大麻酚 (THC)，含<strong>火麻仁</strong></li>
+            <li><strong>S9 糖皮質類固醇</strong>：消炎及調節代謝藥物</li>
           </ul>
         </div>
-        
-        <!-- 分隔發光線 -->
-        <div id="viz-divider" style="position:absolute;top:0;left:0;width:3px;height:100%;
-          background:linear-gradient(to bottom,transparent,#4fc3f7,transparent);
-          box-shadow:0 0 12px #4fc3f7;pointer-events:none;"></div>
-      </div>
-      
-      <!-- 控制滑動桿 -->
-      <div style="margin-top:20px; display:flex; align-items:center; justify-content:center; gap:20px;">
-        <span style="font-size:0.45em; color:var(--warn);">← 偏見認知</span>
-        <input id="viz-slider" type="range" min="0" max="100" value="0" style="width:50%; accent-color:var(--accent2); cursor:pointer;">
-        <span style="font-size:0.45em; color:var(--accent2);">科學真相 →</span>
       </div>
     </section>
 
-    <!-- 5. 兩大核心高風險藥材 -->
-    <section id="slide-herbs"
-             data-background-image="images/herbs_bg.png"
-             data-background-opacity="0.15"
-             data-background-size="cover">
-      <h2>兩大核心違禁中藥成分</h2>
-      <p style="font-size:0.45em; color:#aaa; margin-top:0px; margin-bottom:12px;">以下兩類中藥含有世界反運動禁藥機構 (WADA) 明令禁止的成分，應絕對避免：</p>
-      
-      <div class="adv-grid two-cols">
-        <!-- 麻黃 -->
-        <div class="adv-card warn-card fragment" data-fragment-index="1">
-          <div class="adv-icon"><img src="images/icon_mahuang.png" alt="麻黃"></div>
-          <div class="adv-title">麻黃 (Ephedra)</div>
-          <div class="adv-desc">
-            <ul>
-              <li><strong>所含禁藥</strong>：麻黃鹼 (Ephedrine)、偽麻黃鹼。</li>
-              <li><strong>禁藥類別</strong>：S6. 興奮劑 (S6. Stimulants)。</li>
-              <li><strong>禁用規則</strong>：<strong>賽內禁用</strong>。尿液濃度高於 10 µg/mL 即判陽性。</li>
-              <li><strong>常見方劑</strong>：葛根湯、麻黃湯、小青龍湯、防風通聖散、感冒糖漿。</li>
-            </ul>
+    <!-- Slide 4: 去甲烏藥鹼專題 -->
+    <section>
+      <h2>三、 去甲烏藥鹼 (Higenamine) 定量數據</h2>
+      <div class="glass-card">
+        <div style="font-size:0.55em; margin-bottom:12px; color:#ccc;">
+          WADA S3 類（$\beta_2$ 致效劑）全時段禁用，尿液陽性判定閾值為 <strong>10 ng/mL</strong>。
+          以下為高醫大許美智教授團隊針對臺灣市售藥材所做的普查定量分析數據：
+        </div>
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="title">蓮子心</div>
+            <div class="val">65.00<span class="unit">&mu;g/g</span></div>
+            <div class="risk high">極高風險 (含量最高)</div>
+          </div>
+          <div class="stat-card">
+            <div class="title">黃柏</div>
+            <div class="val">26.20<span class="unit">&mu;g/g</span></div>
+            <div class="risk high">極高風險</div>
+          </div>
+          <div class="stat-card">
+            <div class="title">附子 (烏頭屬)</div>
+            <div class="val">檢出<span class="unit">含有</span></div>
+            <div class="risk high">高風險</div>
+          </div>
+          <div class="stat-card">
+            <div class="title">細辛</div>
+            <div class="val">檢出<span class="unit">含有</span></div>
+            <div class="risk high">高風險</div>
+          </div>
+          <div class="stat-card">
+            <div class="title">吳茱萸</div>
+            <div class="val">檢出<span class="unit">含有</span></div>
+            <div class="risk mid">中高風險</div>
           </div>
         </div>
-        <!-- 蓮子心 / 細辛 -->
-        <div class="adv-card warn-card fragment" data-fragment-index="2">
-          <div class="adv-icon"><img src="images/icon_lotus.png" alt="蓮子心與細辛"></div>
-          <div class="adv-title">蓮子心 / 細辛 / 附子</div>
-          <div class="adv-desc">
-            <ul>
-              <li><strong>所含禁藥</strong>：去甲烏藥鹼 (Higenamine)。</li>
-              <li><strong>禁藥類別</strong>：S3. β2 作用劑 (S3. Beta-2 Agonists)。</li>
-              <li><strong>禁用規則</strong>：<strong>賽內與賽外皆禁用</strong>。無任何容許界限值（即驗出即陽性）。</li>
-              <li><strong>常見方劑</strong>：參蘇飲、真武湯，以及各種含有蓮子心的消暑茶或安神湯飲。</li>
-            </ul>
+        <div style="font-size:0.38em; color:var(--accent-cyan); text-align:center; margin-top:14px; font-weight:700;">
+          * 注意：蓮子心為去甲烏藥鹼含量之冠，臨床上每日僅服用 0.8g 蓮子心即可造成尿檢陽性。
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: 跨界日常植物與食材風險 -->
+    <section>
+      <h2>四、 去甲烏藥鹼：隱藏的跨界植物來源</h2>
+      <div class="grid-2">
+        <div class="glass-card">
+          <div class="icon-title-row">
+            <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 11.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <h3>日常食品與喉糖風險</h3>
+          </div>
+          <ul class="custom-list">
+            <li><strong>南天竹喉糖</strong>：日本常見止咳喉糖，添加南天竹，長期或大量使用具陽性檢出風險。</li>
+            <li><strong>釋迦 (Annona squamosa)</strong>：水果天然含有去甲烏藥鹼，賽前應避免過量。</li>
+            <li><strong>拉拉藤與波葉青牛膽</strong>：草本植物製劑的常見成分。</li>
+          </ul>
+        </div>
+        <div class="glass-card">
+          <div class="icon-title-row">
+            <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7z"/></svg>
+            <h3>調味與辛香料風險</h3>
+          </div>
+          <ul class="custom-list">
+            <li><strong>木姜子 (馬告)</strong>：原住民特色辛香料，含有去甲烏藥鹼成分。</li>
+            <li><strong>白胡椒 & 蓽茇 (長胡椒)</strong>：日常調味料，亦含微量去甲烏藥鹼。</li>
+            <li><strong>丁香 & 花椒</strong>：常用於滷包及藥膳。雖然一般烹調用量導致超標風險低，仍建議運動員賽前減少食用。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: 口服四逆湯科學中藥代謝人體試驗 -->
+    <section>
+      <h2>五、 口服「四逆湯」去甲烏藥鹼排除試驗</h2>
+      <div class="simulator-container">
+        <!-- 左欄控制項 -->
+        <div class="control-panel">
+          <h3 style="font-size:0.85em; margin-bottom:15px; color:#fff;">口服四逆湯後時間軸模擬器</h3>
+          <div class="slider-group">
+            <div class="slider-label">
+              <span>口服後時間</span>
+              <span><strong id="hours-val">0</strong> 小時</span>
+            </div>
+            <input type="range" class="custom-range" id="hours-range" min="0" max="72" value="0">
+          </div>
+          <ul class="custom-list" style="font-size:0.36em; line-height:1.7;">
+            <li>試驗方劑：四逆湯科學中藥濃縮製劑 (含附子)</li>
+            <li>半衰期特徵：服用後尿中濃度急劇攀升，隨後緩慢衰減</li>
+            <li>安全閾值：低於 <strong>10 ng/mL</strong> 才判定為陰性 (安全)</li>
+          </ul>
+        </div>
+
+        <!-- 右欄數據回饋 -->
+        <div class="data-panel">
+          <div style="font-size:0.42em; color:#aaa; margin-bottom:8px;">模擬尿中去甲烏藥鹼排除濃度</div>
+          <div class="big-stat" id="conc-val">50.0<span>ng/mL</span></div>
+          <div class="status-badge danger" id="status-val">陽性 (禁藥違規)</div>
+          <div class="sim-desc" id="desc-val">口服四逆湯後立即在體內代謝，尿液排除濃度瞬間突破 10 ng/mL 檢測閥值。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 7: 興奮劑 (S6) 類中藥 -->
+    <section>
+      <h2>六、 興奮劑 (S6) 類高風險中藥與方劑</h2>
+      <div class="grid-3">
+        <div class="glass-card">
+          <h3 style="color:var(--accent-orange); font-size:0.8em; margin-bottom:10px;">麻黃 (Ephedrine)</h3>
+          <ul class="custom-list" style="font-size:0.48em;">
+            <li><strong>禁用標準</strong>：麻黃鹼 &gt; 10 &mu;g/mL</li>
+            <li><strong>高風險複方</strong>：葛根湯、小青龍湯、防風通聖散、麻杏甘石湯。</li>
+            <li><strong>特徵</strong>：藥方名常不含「麻黃」字樣，極易造成誤服。</li>
+          </ul>
+        </div>
+        <div class="glass-card">
+          <h3 style="color:var(--accent-orange); font-size:0.8em; margin-bottom:10px;">半夏 (L-ephedrine)</h3>
+          <ul class="custom-list" style="font-size:0.48em;">
+            <li><strong>禁用標準</strong>：含有 L-麻黃鹼</li>
+            <li><strong>高風險複方</strong>：半夏瀉心湯、小半夏湯。</li>
+            <li><strong>警示案例</strong>：台灣曾有網球選手因服用含半夏的止咳中藥，被驗出興奮劑陽性遭禁賽。</li>
+          </ul>
+        </div>
+        <div class="glass-card">
+          <h3 style="color:var(--accent-orange); font-size:0.8em; margin-bottom:10px;">馬錢子 (Strychnine)</h3>
+          <ul class="custom-list" style="font-size:0.48em;">
+            <li><strong>禁用標準</strong>：含有番木鼈鹼</li>
+            <li><strong>藥理毒性</strong>：強烈刺激中樞神經，毒性極強。</li>
+            <li><strong>風險</strong>：雖有強心消腫功效，但常因超量或不當炮製造成嚴重中毒與違規。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: 同化性與生長因子 (S1, S2, S4) 類中藥 -->
+    <section>
+      <h2>七、 同化性與荷爾蒙 (S1, S2, S4) 類中藥</h2>
+      <div class="grid-2">
+        <div class="glass-card">
+          <div class="icon-title-row">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+            <h3>同化作用與生長因子</h3>
+          </div>
+          <ul class="custom-list">
+            <li><strong>麝香 (Musk)</strong>：含有 androstane 雄性素結構，具蛋白質同化作用 (S1 禁用)。中國安宮牛黃丸等仍有添加。</li>
+            <li><strong>初乳 (Colostrum)</strong>：富含 <strong>IGF-1</strong> 生長因子，干擾內源性 GH 藥檢，WADA 明確警示運動員避免使用。</li>
+            <li><strong>牛膝 (牛膝/川牛膝)</strong>：富含<strong>蛻皮激素 (Ecdysterone)</strong>，具肌肉增長作用，已列入 WADA 監控計畫。</li>
+          </ul>
+        </div>
+        <div class="glass-card">
+          <div class="icon-title-row">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <h3>荷爾蒙調節劑與大麻素</h3>
+          </div>
+          <ul class="custom-list">
+            <li><strong>紫河車與動物胎盤</strong>：含有雌激素、黃體素等複雜荷爾蒙，干擾內分泌系統，具 S4 禁用風險。</li>
+            <li><strong>火麻仁 (大麻種子)</strong>：潤腸通便常用藥。其種子本身不含 THC，但在採摘與製程中極易受植株大麻素污染 (S8 賽內禁用)。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 9: 睪固酮促進劑與補充品污染風險 -->
+    <section>
+      <h2>八、 補充品與睪固酮促進劑污染風險</h2>
+      <div class="glass-card">
+        <div style="font-size:0.52em; margin-bottom:15px; color:#ccc;">
+          澳洲運動學院（AIS）將營養補充品分為四級，<strong>Group D（禁用或高風險污染）</strong> 明確警告運動員禁止服用：
+        </div>
+        <div class="grid-3" style="font-size:0.42em; line-height:1.6;">
+          <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:10px; border-top:3px solid var(--accent-orange);">
+            <h4 style="margin-top:0; color:var(--accent-orange);">蒺藜 (Tribulus)</h4>
+            <p style="color:#bbb; font-size:0.85em;">被宣稱為天然睪固酮促進劑，但實務上常摻雜禁用成分，列為 Group D。</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:10px; border-top:3px solid var(--accent-orange);">
+            <h4 style="margin-top:0; color:var(--accent-orange);">東革阿里 (Tongkat Ali)</h4>
+            <p style="color:#bbb; font-size:0.85em;">含有寬纓酮，人體不改變尿 T/E，但補充劑產品因製程受禁藥污染率極高，列為 Group D。</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:10px; border-top:3px solid var(--accent-orange);">
+            <h4 style="margin-top:0; color:var(--accent-orange);">瑪卡 (Maca)</h4>
+            <p style="color:#bbb; font-size:0.85em;">本身不含禁藥，但常被商人摻雜 Sildenafil (威而鋼/西地那非) 或合成類固醇，列為 Group D。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 6. 互動：投票測驗 -->
-    <section id="slide-poll">
-      <h2 style="font-size:1.1em; margin-bottom:0.4em;">即時隨堂測驗：哪種藥材含有「去甲烏藥鹼」？</h2>
-      <p style="font-size:0.45em; color:#aaa; margin-top:0px; margin-bottom:16px;">以下哪種常見中草藥或配料，因含有「去甲烏藥鹼」而屬於賽內外均禁用的 S3 類別？</p>
-      
-      <div id="poll-options" style="display:flex; flex-direction:column; gap:12px; max-width:650px; margin:0.8em auto 0 auto;">
-        <!-- JavaScript 動態生成按鈕 -->
-      </div>
-      
-      <div style="font-size:0.38em; color:#888; text-align:center; margin-top:16px;">
-        目前已投票人數：<span id="poll-total" style="color:var(--accent); font-weight:700;">0</span> 人
-      </div>
-    </section>
-
-    <!-- 7. 安全用藥三原則 -->
-    <section id="slide-guidelines">
-      <h2>運動員安全用藥三原則</h2>
-      <p style="font-size:0.45em; color:#aaa; margin-top:0px; margin-bottom:16px;">防範未然，落實以下步驟能最大程度避免中藥引起的禁藥風險：</p>
-      
-      <div class="timeline">
-        <div class="timeline-item fragment" data-fragment-index="1">
-          <div class="ti-date">原則一：主動告知運動員身分</div>
-          <div class="ti-text">在看中醫或購買成藥時，務必主動向醫師與藥師表明「我是接受藥檢的運動員」，並說明自己有嚴格的禁用藥物限制。</div>
+    <!-- Slide 10: 臺灣運動禁藥防制法治與人權 -->
+    <section>
+      <h2>九、 臺灣運動禁藥防制法治與選手人權</h2>
+      <div class="grid-2">
+        <div class="glass-card">
+          <div class="icon-title-row">
+            <svg viewBox="0 0 24 24"><path d="M12 22C6.49 22 2 17.51 2 12S6.49 2 12 2s10 4.49 10 10-4.49 10-10 10zm0-18c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8zm1 11h-2v2h2v-2zm0-8h-2v6h2V7z"/></svg>
+            <h3>隱私權與法律保留原則</h3>
+          </div>
+          <ul class="custom-list" style="font-size:0.46em;">
+            <li><strong>法源位階疑慮</strong>：依國民體育法第24條授權訂定《運動禁藥管制辦法》。立法院報告指出，強迫藥檢、行蹤登錄等限制隱私及工作權之核心事項，授權恐嫌簡略，未來應直接明文寫入母法中。</li>
+            <li><strong>行蹤登錄 (Whereabouts)</strong>：RTP 選手必須每日申報一小時候檢行程，深度干預個人隱私，應在防制禁藥與比例原則間取得平衡。</li>
+          </ul>
         </div>
-        <div class="timeline-item fragment" data-fragment-index="2">
-          <div class="ti-date">原則二：精密比對與多重查詢</div>
-          <div class="ti-text">服用任何中藥或中成藥前，必須比對處方成分與 WADA 最新禁藥清單，亦可利用政府或協會提供的「中藥運動禁藥查詢系統」進行查詢。</div>
-        </div>
-        <div class="timeline-item fragment" data-fragment-index="3">
-          <div class="ti-date">原則三：留存處方與樣品備查</div>
-          <div class="ti-text">完整保留就診處方簽、藥包袋、收據與購買包裝。必要時將煎藥後的剩餘藥渣保留一小份進行冷凍，以備日後出現異常檢測時作為釐清依據。</div>
+        <div class="glass-card">
+          <div class="icon-title-row">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+            <h3>TUE 申請於中藥複方之困境</h3>
+          </div>
+          <ul class="custom-list" style="font-size:0.46em;">
+            <li><strong>中藥複方申請 TUE 難度高</strong>：西藥成分單一且穩定。但科學中藥濃縮複方含數百種天然分子，不同藥廠、批次的化學含量波動顯著，CTADA 難以審查核可。</li>
+            <li><strong>臨床替代策略</strong>：選手因病就醫，應優先要求中醫師開立已知絕對安全之替代中藥材（例如乾薑代附子），避開麻黃、細辛、蓮子心等高風險成分。</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- 8. 封底 -->
-    <section id="slide-end"
-             data-background-image="images/ending.png"
-             data-background-opacity="0.4"
-             data-background-size="cover">
-      <div class="end-slide">
-        <div class="big">
-          <img src="images/icon_globe.png" alt=""
-               style="width:140px;height:140px;object-fit:contain;
-                      filter:drop-shadow(0 0 24px rgba(79,195,247,0.7));">
+    <!-- Slide 11: 選手安全用藥指引 -->
+    <section>
+      <h2>十、 選手用藥避雷防護指引</h2>
+      <div class="grid-2">
+        <div class="glass-card">
+          <div class="icon-title-row">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h-2v-2h4v8zm0-10h-2V5h-2V3h4v4z"/></svg>
+            <h3>安全用藥「五字訣」</h3>
+          </div>
+          <ul class="custom-list" style="font-size:0.48em;">
+            <li><strong>停</strong>：拒絕盲目服用成分不明、宣稱神奇療效的進補中藥或藥膏。</li>
+            <li><strong>看</strong>：看清許可證字號與製造商。拒服無標示的「祖傳祕方」。</li>
+            <li><strong>查</strong>：利用 CTADA 官方「運動禁藥查詢系統」查核。</li>
+            <li><strong>問</strong>：就醫主動聲明運動員身份，詢問運動禁藥諮詢藥師。</li>
+            <li><strong>請</strong>：請醫師開立安全替代中藥材，避開禁用物質。</li>
+          </ul>
         </div>
-        <h1 style="color:var(--accent2); margin-top:0.4em;">安全參賽，乾淨體育</h1>
-        <p class="tagline">用正確的科學知識，守護您得來不易的運動榮耀！</p>
-        <p style="font-size:0.4em; color:#666; margin-top:3em;">簡報結束 · 謝謝聆聽</p>
+        <div class="glass-card">
+          <div class="icon-title-row">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.12 0 2.05-.74 2.38-1.75 1.7.97 2.94 2.65 3.2 4.67-.09.06-.21.08-.38.08h-1.2c-.55 0-1 .45-1 1v2c0 1.1-.9 2-2 2h-1v1.93c1.93-.05 3.65-1.07 4.68-2.61z"/></svg>
+            <h3>瘦肉精肉類污染免責指引</h3>
+          </div>
+          <ul class="custom-list" style="font-size:0.48em;">
+            <li><strong>WADA 肉類污染條款</strong>：食入含克倫特羅（瘦肉精）殘留的肉品，可能導致非蓄意的藥檢陽性。</li>
+            <li><strong>免責評估標準</strong>：尿液克倫特羅檢體濃度 &lt; <strong>5 ng/mL</strong>。</li>
+            <li><strong>選手防護義務</strong>：提供污染高風險地區（如中國、墨西哥）的詳細旅行史及消費發票以利科學判定免責。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 12: 封底 -->
+    <section>
+      <div class="ending-slide">
+        <div class="ending-logo">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg>
+        </div>
+        <h1>安全運動，智慧避雷</h1>
+        <p class="subtitle">堅守嚴格責任，科學用藥守護運動生命</p>
       </div>
     </section>
 
@@ -358,184 +879,81 @@
     plugins: []
   });
 
-  // === VIZ 左右拉桿揭露效果 ===
-  document.getElementById('viz-slider').addEventListener('input', function() {
-    const v = +this.value;
-    document.getElementById('viz-after').style.clipPath = `inset(0 ${100 - v}% 0 0)`;
-    document.getElementById('viz-divider').style.left = v + '%';
-  });
-</script>
+  // === 互動一：投票模擬器 JS ===
+  let totalVotes = 0;
+  let voted = false;
+  const mockVotes = { 1: 12, 2: 88 }; // 初始百分比傾向
 
-<!-- Firebase SDK & Realtime Database Module -->
-<script type="module">
-  import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js';
-  import {
-    getFirestore, collection, addDoc, onSnapshot,
-    serverTimestamp, query, orderBy, doc, setDoc
-  } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js';
-
-  // 1. Firebase 初始化
-  const firebaseConfig = {
-    apiKey: "AIzaSyAYQhNavPSce17XtvDC5xnXyl9iUhW9KjA",
-    authDomain: "teacherstudy-109ef.firebaseapp.com",
-    projectId: "teacherstudy-109ef",
-    storageBucket: "teacherstudy-109ef.firebasestorage.app",
-    messagingSenderId: "196599230156",
-    appId: "1:196599230156:web:cfe55d364df3ae1b9d5c69"
-  };
-  const app = initializeApp(firebaseConfig);
-  const fdb = getFirestore(app);
-
-  // 專案專屬命名，防跨場次污染
-  const SLUG = 'tcm_doping';
-  const wordsRef = collection(fdb, `${SLUG}_wordcloud`);
-  const pollRef = doc(fdb, `${SLUG}_poll`, 'results');
-
-  // ==========================================
-  // 元件一：即時文字雲系統
-  // ==========================================
-  const COLORS = ['#4fc3f7','#e8643a','#ffb74d','#81c784','#ce93d8','#80deea','#f48fb1'];
-  let wcData = [];
-
-  window.wcSubmit = async function() {
-    const input = document.getElementById('wc-input');
-    const word = input.value.trim();
-    if (!word) return;
-    const btn = document.getElementById('wc-btn');
-    btn.disabled = true;
-    try {
-      await addDoc(wordsRef, { word, created_at: serverTimestamp() });
-      input.value = '';
-    } catch(e) {
-      console.error("提交文字雲失敗:", e);
-    } finally {
-      btn.disabled = false;
+  window.vote = function(option) {
+    if (voted) return; // 只能投一次
+    voted = true;
+    
+    totalVotes = 45; // 模擬總票數
+    if (option === 1) {
+      mockVotes[1] = 4; // 誤判率低
+      mockVotes[2] = 96;
+    } else {
+      mockVotes[1] = 2;
+      mockVotes[2] = 98;
     }
+    
+    // 更新 UI
+    document.getElementById('pb-1').style.width = mockVotes[1] + '%';
+    document.getElementById('pb-2').style.width = mockVotes[2] + '%';
+    
+    const pct1 = document.getElementById('pv-1');
+    const pct2 = document.getElementById('pv-2');
+    pct1.innerText = mockVotes[1] + '%';
+    pct2.innerText = mockVotes[2] + '%';
+    pct1.style.opacity = 1;
+    pct2.style.opacity = 1;
+    
+    document.getElementById('poll-votes').innerText = totalVotes;
   };
 
-  document.getElementById('wc-input')?.addEventListener('keypress', e => {
-    if (e.key === 'Enter') window.wcSubmit();
-  });
-  document.getElementById('wc-btn')?.addEventListener('click', window.wcSubmit);
+  // === 互動二：去甲烏藥鹼排除模擬器 JS ===
+  const rangeInput = document.getElementById('hours-range');
+  const hoursVal = document.getElementById('hours-val');
+  const concVal = document.getElementById('conc-val');
+  const statusVal = document.getElementById('status-val');
+  const descVal = document.getElementById('desc-val');
 
-  // 監聽文字雲變化
-  onSnapshot(query(wordsRef, orderBy('created_at', 'asc')), snap => {
-    const words = [];
-    snap.forEach(doc => words.push(doc.data().word));
-    const counts = {};
-    words.forEach(w => counts[w] = (counts[w] || 0) + 1);
-    wcData = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-
-    document.getElementById('wc-total').textContent = words.length;
-    document.getElementById('wc-unique').textContent = wcData.length;
-
-    const listEl = document.getElementById('wc-list');
-    listEl.innerHTML = wcData.slice(0, 10).map(([w, c]) =>
-      `<div style="display:flex;justify-content:space-between;padding:4px 0;
-                   border-bottom:1px solid rgba(255,255,255,0.06);">
-        <span>${w}</span><span style="color:var(--accent);font-weight:700;">${c}</span>
-      </div>`
-    ).join('') || '<div style="color:#555;padding:8px 0;">尚無答案提交</div>';
-
-    const empty = document.getElementById('wc-empty');
-    if (empty) empty.style.display = wcData.length > 0 ? 'none' : '';
-    drawWordCloud();
-  });
-
-  function drawWordCloud() {
-    const canvas = document.getElementById('wc-canvas');
-    if (!canvas || typeof WordCloud === 'undefined') return;
-    const rect = canvas.getBoundingClientRect();
-    if (rect.width < 10 || rect.height < 10) return;
-    canvas.width = rect.width;
-    canvas.height = rect.height;
-    if (wcData.length === 0) return;
-    const maxCount = wcData[0][1];
-    WordCloud(canvas, {
-      list: wcData.map(([w, c]) => [w, Math.max(18, Math.round((c / maxCount) * 64))]),
-      gridSize: 6,
-      weightFactor: 1,
-      fontFamily: '"Microsoft JhengHei", "Noto Sans TC", sans-serif',
-      color: () => COLORS[Math.floor(Math.random() * COLORS.length)],
-      backgroundColor: 'transparent',
-      rotateRatio: 0.3,
-      shuffle: true,
-    });
-  }
-
-  // ==========================================
-  // 元件二：即時投票系統
-  // ==========================================
-  const OPTIONS = [
-    { id: 'a', label: 'A) 枸杞' },
-    { id: 'b', label: 'B) 蓮子心 (正解：含去甲烏藥鹼)' },
-    { id: 'c', label: 'C) 紅棗' },
-  ];
-
-  const userId = 'user_' + Math.random().toString(36).slice(2, 9);
-  let myVote = null;
-
-  // 動態渲染投票按鈕
-  const pollContainer = document.getElementById('poll-options');
-  OPTIONS.forEach(opt => {
-    const btn = document.createElement('button');
-    btn.className = 'poll-opt-btn';
-    btn.id = `poll-btn-${opt.id}`;
-    btn.innerHTML = `
-      <div style="display:flex;align-items:center;gap:12px;">
-        <span style="flex:0 0 24px;height:24px;border-radius:50%;border:2px solid rgba(255,255,255,0.3);
-                     display:flex;align-items:center;justify-content:center;font-size:12px;"
-              id="poll-check-${opt.id}"></span>
-        <span style="flex:1;text-align:left;">${opt.label}</span>
-        <span id="poll-bar-wrap-${opt.id}"
-              style="flex:0 0 140px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;overflow:hidden;">
-          <div id="poll-bar-${opt.id}" style="height:100%;width:0;background:var(--accent2);border-radius:4px;transition:width 0.4s;"></div>
-        </span>
-        <span id="poll-pct-${opt.id}" style="flex:0 0 40px;text-align:right;font-size:0.75em;color:#888;">0%</span>
-      </div>
-    `;
-    btn.onclick = () => vote(opt.id);
-    pollContainer.appendChild(btn);
-  });
-
-  async function vote(optId) {
-    if (myVote) return; // 單選，投票後不可修改
-    myVote = optId;
-    const data = {};
-    data[`votes.${userId}`] = optId;
-    data.updated_at = serverTimestamp();
-    await setDoc(pollRef, data, { merge: true });
-  }
-
-  // 監聽投票變化
-  onSnapshot(pollRef, snap => {
-    const data = snap.data() || {};
-    const votes = data.votes || {};
-    const counts = {};
-    OPTIONS.forEach(o => counts[o.id] = 0);
-    Object.values(votes).forEach(v => { if (counts[v] !== undefined) counts[v]++; });
-    const total = Object.values(counts).reduce((a, b) => a + b, 0);
-
-    document.getElementById('poll-total').textContent = total;
-    OPTIONS.forEach(opt => {
-      const pct = total > 0 ? Math.round((counts[opt.id] / total) * 100) : 0;
-      document.getElementById(`poll-bar-${opt.id}`).style.width = pct + '%';
-      document.getElementById(`poll-pct-${opt.id}`).textContent = pct + '%';
-      const check = document.getElementById(`poll-check-${opt.id}`);
-      if (myVote === opt.id) {
-        check.textContent = '✓';
-        check.style.background = 'var(--accent2)';
-        check.style.borderColor = 'var(--accent2)';
+  if (rangeInput) {
+    rangeInput.addEventListener('input', function() {
+      const hours = parseInt(this.value);
+      hoursVal.innerText = hours;
+      
+      // 指數衰減公式模擬排除：起始 50 ng/mL，半衰期約 12 小時
+      let conc = 50 * Math.exp(-0.065 * hours);
+      conc = Math.round(conc * 10) / 10;
+      
+      // 更新顯示濃度
+      concVal.innerHTML = conc.toFixed(1) + '<span>ng/mL</span>';
+      
+      // 更新狀態標籤與說明
+      if (conc >= 10.0) {
+        statusVal.innerText = '陽性 (禁藥違規)';
+        statusVal.className = 'status-badge danger';
+        
+        if (hours === 0) {
+          descVal.innerText = '口服四逆湯科學中藥後，尿液排除去甲烏藥鹼濃度瞬間突破陽性閥值 (50 ng/mL)。';
+        } else if (hours <= 12) {
+          descVal.innerText = '服藥後 12 小時內，雖然濃度有所衰減，但仍遠高於 WADA 規定的 10 ng/mL 閥值，藥檢陽性風險極高。';
+        } else {
+          descVal.innerText = '服藥後 24 小時左右，體內清除仍在進行，尿中去甲烏藥鹼濃度仍超標，依然屬於违规陽性區間。';
+        }
+      } else {
+        statusVal.innerText = '陰性 (安全範圍)';
+        statusVal.className = 'status-badge safe';
+        
+        if (hours < 72) {
+          descVal.innerText = '服藥後 36 至 48 小時，體內濃度已衰減至 10 ng/mL 閥值以下，進入安全陰性區間，但因個體代謝率差異，仍需謹慎。';
+        } else {
+          descVal.innerText = '服藥後 72 小時以上，體內去甲烏藥鹼基本排除完畢，尿檢濃度降至極低，風險降為最低。';
+        }
       }
     });
-  });
-
-  // 切頁時自動重繪文字雲，解決 Canvas 渲染時尺寸為 0 的問題
-  Reveal.on('slidechanged', e => {
-    if (e.currentSlide?.id === 'slide-wordcloud') {
-      setTimeout(drawWordCloud, 200);
-    }
-  });
+  }
 </script>
 </body>
 </html>
