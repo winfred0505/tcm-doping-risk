@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>運動員使用中藥之運動禁藥風險與防範指引簡報</title>
+  <title>運動員使用中藥之運動禁藥風險與防範指引 (45頁互動簡報)</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/night.css" />
@@ -14,7 +14,7 @@
       --accent-orange: #ff6b35;
       --accent-cyan: #4fc3f7;
       --accent-neon: #00f5ff;
-      --accent-green: #81c784;
+      --accent-green: #2ed573;
       --accent-yellow: #ffb74d;
       --bg-dark: #0f111a;
       --card-bg: rgba(255, 255, 255, 0.05);
@@ -38,12 +38,13 @@
     }
 
     .reveal h1 {
-      font-size: 2.1em;
+      font-size: 1.9em;
       text-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+      line-height: 1.2;
     }
 
     .reveal h2 {
-      font-size: 1.5em;
+      font-size: 1.3em;
       color: var(--accent-cyan);
       margin-bottom: 0.5em;
       position: relative;
@@ -61,7 +62,7 @@
     }
 
     .reveal h3 {
-      font-size: 1.05em;
+      font-size: 0.95em;
       color: #fff;
     }
 
@@ -81,8 +82,8 @@
     .glass-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 22px;
+      border-radius: 14px;
+      padding: 20px;
       backdrop-filter: blur(8px);
       box-shadow: var(--glass-shadow);
       margin-top: 10px;
@@ -92,6 +93,11 @@
     .glass-card.highlight {
       border: 1px solid rgba(79, 195, 247, 0.3);
       box-shadow: 0 0 15px rgba(79, 195, 247, 0.15);
+    }
+
+    .glass-card.warn {
+      border: 1px solid rgba(255, 107, 53, 0.3);
+      box-shadow: 0 0 15px rgba(255, 107, 53, 0.15);
     }
 
     /* === 封面樣式 === */
@@ -106,7 +112,7 @@
       color: #fff;
       padding: 6px 16px;
       border-radius: 30px;
-      font-size: 0.5em;
+      font-size: 0.45em;
       letter-spacing: 0.1em;
       margin-bottom: 1.2em;
       font-weight: 700;
@@ -114,7 +120,7 @@
     }
 
     .title-slide .subtitle {
-      font-size: 0.72em;
+      font-size: 0.68em;
       color: #ccc;
       margin-top: 0.4em;
       font-weight: 400;
@@ -122,7 +128,7 @@
 
     .title-slide .info-footer {
       margin-top: 2.2em;
-      font-size: 0.45em;
+      font-size: 0.42em;
       color: #778;
       display: flex;
       justify-content: center;
@@ -155,14 +161,14 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      font-size: 0.52em;
+      font-size: 0.48em;
       color: #ddd;
     }
 
     .reveal ul.custom-list li {
       position: relative;
-      padding-left: 28px;
-      margin-bottom: 10px;
+      padding-left: 24px;
+      margin-bottom: 8px;
       line-height: 1.5;
     }
 
@@ -171,8 +177,8 @@
       position: absolute;
       left: 5px;
       top: 6px;
-      width: 8px;
-      height: 8px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: var(--accent-orange);
       box-shadow: 0 0 8px var(--accent-orange);
@@ -190,27 +196,32 @@
     .icon-title-row {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       margin-bottom: 10px;
     }
 
     .icon-title-row svg {
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       fill: var(--accent-cyan);
       filter: drop-shadow(0 0 6px var(--accent-cyan));
     }
 
+    .icon-title-row.warn svg {
+      fill: var(--accent-orange);
+      filter: drop-shadow(0 0 6px var(--accent-orange));
+    }
+
     .icon-title-row h3 {
       margin: 0;
-      font-size: 0.85em;
+      font-size: 0.8em;
     }
 
     /* === VS 對比表格 === */
     .vs-container {
       display: grid;
       grid-template-columns: 1fr 50px 1fr;
-      margin-top: 15px;
+      margin-top: 10px;
       align-items: center;
     }
 
@@ -218,7 +229,7 @@
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 12px;
-      padding: 20px;
+      padding: 18px;
       text-align: left;
     }
 
@@ -234,9 +245,9 @@
       display: inline-block;
       padding: 4px 10px;
       border-radius: 6px;
-      font-size: 0.45em;
+      font-size: 0.42em;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .vs-badge.left {
@@ -252,17 +263,76 @@
     .vs-center {
       font-family: 'Outfit', sans-serif;
       font-weight: 900;
-      font-size: 1.2em;
+      font-size: 1.1em;
       color: rgba(255,255,255,0.15);
       text-shadow: 0 0 10px rgba(255,255,255,0.05);
     }
 
-    /* === 互動模擬器一：嚴格責任投標 === */
+    /* === 互動情境模擬 (情境題) === */
+    .scenario-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: left;
+      font-size: 0.48em;
+    }
+    .scenario-question {
+      font-weight: 700;
+      color: var(--accent-yellow);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .scenario-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .scenario-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+      font-family: inherit;
+      font-size: 0.9em;
+    }
+    .scenario-btn:hover {
+      background: rgba(255,255,255,0.09);
+    }
+    .scenario-btn.correct {
+      border-color: var(--accent-green);
+      background: rgba(46, 213, 115, 0.15);
+      color: #2ed573;
+      box-shadow: 0 0 10px rgba(46, 213, 115, 0.2);
+    }
+    .scenario-btn.incorrect {
+      border-color: #ff4757;
+      background: rgba(255, 71, 87, 0.15);
+      color: #ff4757;
+      box-shadow: 0 0 10px rgba(255, 71, 87, 0.2);
+    }
+    .scenario-feedback {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.02);
+      border-left: 3px solid var(--accent-cyan);
+      display: none;
+      font-size: 0.85em;
+      line-height: 1.6;
+      color: #eee;
+    }
+
+    /* === 互動一：隨堂投票模擬器 === */
     .poll-container {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 14px;
-      padding: 20px;
+      padding: 18px;
       text-align: left;
     }
 
@@ -270,7 +340,7 @@
       font-size: 0.52em;
       color: #eee;
       line-height: 1.5;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       border-left: 3px solid var(--accent-cyan);
       padding-left: 10px;
     }
@@ -281,12 +351,12 @@
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
       color: #fff;
-      padding: 12px 18px;
+      padding: 10px 16px;
       border-radius: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       cursor: pointer;
       font-family: inherit;
-      font-size: 0.46em;
+      font-size: 0.44em;
       transition: all 0.2s ease;
       position: relative;
       overflow: hidden;
@@ -329,35 +399,35 @@
       font-size: 0.36em;
       color: #667;
       text-align: center;
-      margin-top: 10px;
+      margin-top: 8px;
     }
 
-    /* === 互動模擬器二：去甲烏藥鹼清除率 === */
+    /* === 互動二：去甲烏藥鹼清除率 === */
     .simulator-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 20px;
       align-items: center;
-      margin-top: 10px;
+      margin-top: 8px;
     }
 
     .control-panel {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 12px;
-      padding: 20px;
+      padding: 16px;
     }
 
     .slider-group {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .slider-label {
-      font-size: 0.44em;
+      font-size: 0.42em;
       color: #aaa;
       display: flex;
       justify-content: space-between;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .slider-label strong {
@@ -392,13 +462,13 @@
       background: rgba(0,0,0,0.2);
       border: 1px solid rgba(255,255,255,0.05);
       border-radius: 12px;
-      padding: 22px;
+      padding: 18px;
       text-align: center;
     }
 
     .big-stat {
       font-family: 'Outfit', sans-serif;
-      font-size: 2.2em;
+      font-size: 2.0em;
       font-weight: 800;
       color: var(--accent-orange);
       line-height: 1.1;
@@ -416,9 +486,9 @@
       display: inline-block;
       padding: 4px 12px;
       border-radius: 30px;
-      font-size: 0.45em;
+      font-size: 0.42em;
       font-weight: 700;
-      margin-top: 10px;
+      margin-top: 8px;
       letter-spacing: 0.05em;
     }
 
@@ -436,31 +506,31 @@
     }
 
     .sim-desc {
-      font-size: 0.36em;
+      font-size: 0.34em;
       color: #778;
-      margin-top: 12px;
+      margin-top: 10px;
       line-height: 1.5;
     }
 
     /* === 藥材與數值展示卡 === */
     .stat-row {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       justify-content: center;
-      margin-top: 10px;
+      margin-top: 8px;
     }
 
     .stat-card {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 12px;
-      padding: 14px;
+      padding: 12px;
       text-align: center;
       flex: 1;
     }
 
     .stat-card .title {
-      font-size: 0.46em;
+      font-size: 0.44em;
       font-weight: 700;
       color: #bbb;
       margin-bottom: 4px;
@@ -468,20 +538,20 @@
 
     .stat-card .val {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.2em;
+      font-size: 1.1em;
       font-weight: 800;
       color: var(--accent-orange);
     }
 
     .stat-card .unit {
-      font-size: 0.4em;
+      font-size: 0.38em;
       color: #889;
       font-weight: 400;
       margin-left: 2px;
     }
 
     .stat-card .risk {
-      font-size: 0.32em;
+      font-size: 0.3em;
       padding: 2px 6px;
       border-radius: 4px;
       display: inline-block;
@@ -501,23 +571,23 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       background: rgba(79, 195, 247, 0.1);
       border: 2px solid var(--accent-cyan);
-      box-shadow: 0 0 24px rgba(79, 195, 247, 0.4);
+      box-shadow: 0 0 20px rgba(79, 195, 247, 0.3);
       margin-bottom: 1.2em;
     }
 
     .ending-logo svg {
-      width: 44px;
-      height: 44px;
+      width: 38px;
+      height: 38px;
       fill: var(--accent-cyan);
     }
 
     .ending-slide h1 {
-      font-size: 2.2em;
+      font-size: 2.1em;
       background: linear-gradient(135deg, #fff 40%, var(--accent-cyan));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -525,7 +595,7 @@
     }
 
     .ending-slide p.subtitle {
-      font-size: 0.6em;
+      font-size: 0.58em;
       color: #889;
       letter-spacing: 0.05em;
     }
@@ -535,51 +605,94 @@
 <div class="reveal">
   <div class="slides">
 
-    <!-- Slide 1: 封面 -->
+    <!-- ==========================================================
+         MODULE 1: WADA 反運動禁藥基本規範與嚴格責任 (第 1 - 8 頁)
+         ========================================================== -->
+
+    <!-- Page 1: 封面 -->
     <section>
       <div class="title-slide">
         <div class="badge">2026 世界運動禁藥管制規範基準</div>
         <h1>運動員使用中藥之運動禁藥風險</h1>
-        <div class="subtitle">跨界植物來源、學術代謝數據與醫療「問查換申」避雷指引</div>
+        <div class="subtitle">跨界植物來源、學術代謝數據與醫療防護避雷全指南 (45頁珍藏版)</div>
         <div class="info-footer">
-          <span>簡報編譯：<strong>AntiGravity AI</strong></span>
-          <span>資料來源：<strong>NotebookLM 筆記本 & 2026 最新增訂文獻</strong></span>
+          <span>課程編譯：<strong>AntiGravity AI 助理</strong></span>
+          <span>資料來源：<strong>NotebookLM 筆記本與最新學術文獻</strong></span>
         </div>
       </div>
     </section>
 
-    <!-- Slide 2: 嚴格責任原則與最新判罰案例 -->
+    <!-- Page 2: 導言：為什麼「天然草藥」是運動禁藥的巨大盲區？ -->
     <section>
-      <h2>一、 WADA 核心法理與 2025 真實判例</h2>
+      <h2>課程導言</h2>
+      <div class="glass-card">
+        <div class="icon-title-row">
+          <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 11.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <h3>為何天然草藥是禁藥盲區？</h3>
+        </div>
+        <ul class="custom-list">
+          <li><strong>「天然」不等於「無禁藥」</strong>：許多中藥材的天然化學分子結構，與西藥的興奮劑、致效劑成分完全一致。</li>
+          <li><strong>複方成分複雜</strong>：中藥常配伍多種藥材，且基原、產地、炮製標準不一，極易導致禁用成分堆積。</li>
+          <li><strong>檢測技術的躍進</strong>：現代藥檢靈敏度已達 ppb 級，即使微量攝入依然無所遁形。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 3: WADA 與國內防護機構 CTADA 的角色 -->
+    <section>
+      <h2>反運動禁藥組織架構</h2>
       <div class="grid-2">
         <div class="glass-card">
           <div class="icon-title-row">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h-2v-2h4v8zm0-10h-2V5h-2V3h4v4z"/></svg>
-            <h3>嚴格責任 (Strict Liability)</h3>
+            <h3>WADA (世界反運動禁藥機構)</h3>
           </div>
-          <ul class="custom-list">
-            <li><strong>客觀事實判定</strong>：只要生物樣本中檢出禁用物質，即構成違規。</li>
-            <li><strong>無主觀意圖要求</strong>：不論是出於故意、疏忽或日常飲食/處方誤服，皆不影響違規事實。</li>
-            <li><strong>法律後果</strong>：面臨直接禁賽、取消參賽資格與沒收獎牌之重罰。</li>
+          <p style="font-size:0.42em; color:#ddd; line-height:1.6; margin:0;">
+            制訂《世界運動禁藥管制規範》(WADA Code)，每年審查並更新一次全球通用的《禁用清單》，是國際體育仲裁與處分的最權威標準。
+          </p>
+        </div>
+        <div class="glass-card">
+          <div class="icon-title-row">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h-2v-2h4v8zm0-10h-2V5h-2V3h4v4z"/></svg>
+            <h3>CTADA (中華運動禁藥防制基金會)</h3>
+          </div>
+          <p style="font-size:0.42em; color:#ddd; line-height:1.6; margin:0;">
+            負責我國運動禁藥教育宣導、檢體採樣管制，並維護「運動禁藥查詢系統」，為選手提供第一線防護與諮詢。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 4: 嚴格責任原則與判定標準 -->
+    <section>
+      <h2>嚴格責任原則與判定標準</h2>
+      <div class="grid-2">
+        <div class="glass-card">
+          <div class="icon-title-row">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+            <h3>嚴格責任原則 (Strict Liability)</h3>
+          </div>
+          <ul class="custom-list" style="font-size:0.42em; line-height:1.6;">
+            <li><strong>無過失抗辯極難</strong>：一旦體液樣本被檢出禁用物質，違規事實即刻成立。</li>
+            <li><strong>不問故意或過失</strong>：不能以「不知情」、「中醫師開的」、「標榜純天然」作為免責理由。</li>
+            <li><strong>最終責任在個人</strong>：運動員必須對進入自己體內的所有物質負最終的完全責任。</li>
           </ul>
         </div>
         <div class="glass-card highlight">
           <div class="icon-title-row">
-            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
-            <h3 style="color:var(--accent-orange);">2025 台灣網球選手判罰案例</h3>
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+            <h3>客觀事實 vs. 主觀意圖</h3>
           </div>
-          <p style="font-size:0.42em; color:#ddd; line-height:1.6; margin:0 0 10px 0;">
-            台灣網球好手<strong>曹家宜</strong>於 2025 年 1 月被檢出禁用物質<strong>甲基麻黃鹼</strong>陽性。
-          </p>
-          <ul class="custom-list cyan-bullet" style="font-size:0.4em;">
-            <li><strong>原因</strong>：因感冒誤服含有該成分的市售感冒藥（大正百保能）。</li>
-            <li><strong>判決</strong>：雖然選手無故意意圖，但基於嚴格責任原則，ITIA 仍於 2025 年 6 月判定其自願停賽並<strong>禁賽 12 個月</strong>。</li>
+          <ul class="custom-list cyan-bullet" style="font-size:0.42em; line-height:1.6;">
+            <li><strong>客觀判定</strong>：只要 WADA 認證實驗室在尿樣中化驗出禁用物質，即直接判定違規.</li>
+            <li><strong>主觀無效</strong>：是否為了提高表現？是否有主觀犯意？在判定違規時<strong>完全不予考量</strong>。</li>
+            <li><strong>量刑參考</strong>：主觀意圖僅能作為後續討論「禁賽刑期縮短」的參考。</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Slide 3: 隨堂互動投票 -->
+    <!-- Page 5: 隨堂互動投票 -->
     <section>
       <h2>互動模擬：處方用藥的責任歸屬</h2>
       <div class="poll-container" style="max-width:800px; margin: 0 auto;">
@@ -605,105 +718,328 @@
         </div>
       </div>
     </section>
-
-    <!-- Slide 4: 禁用分類 -->
+    
+    <!-- Page 6: 真實案例：曹家宜 2025 甲基麻黃鹼感冒藥案 -->
     <section>
-      <h2>二、 運動禁藥禁用分類與藥材關聯</h2>
-      <div class="vs-container">
-        <div class="vs-box left">
-          <div class="vs-badge left">賽內與賽外 (全時段禁用)</div>
-          <ul class="custom-list">
-            <li><strong>S1 同化性物質</strong>：如<strong>麝香</strong> (Androstane 衍生物)</li>
-            <li><strong>S2 肽類荷爾蒙與生長因子</strong>：如<strong>初乳</strong> (IGF-1)</li>
-            <li><strong>S3 $\beta_2$ 致效劑</strong>：如<strong>去甲烏藥鹼</strong> (Higenamine)</li>
-            <li><strong>S4 賀爾蒙調節劑</strong>：如<strong>紫河車</strong> (複雜荷爾蒙)</li>
-            <li><strong>S5 利尿劑與遮蔽劑</strong>：遮蔽禁藥或快速排泄</li>
-          </ul>
+      <h2>真實案例：曹家宜甲基麻黃鹼案</h2>
+      <div class="glass-card warn">
+        <div class="icon-title-row warn">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h-2v-2h4v8zm0-10h-2V5h-2V3h4v4z"/></svg>
+          <h3 style="color:var(--accent-orange);">感冒服藥的慘痛代價 (2025)</h3>
         </div>
-        <div class="vs-center">VS</div>
-        <div class="vs-box right">
-          <div class="vs-badge right">僅比賽期間 (賽內禁用)</div>
-          <ul class="custom-list">
-            <li><strong>S6 興奮劑</strong>：如<strong>麻黃</strong> (麻黃鹼)、<strong>半夏</strong> (L-麻黃鹼)、<strong>馬錢子</strong> (番木鼈鹼)</li>
-            <li><strong>S7 麻醉劑</strong>：強效麻醉止痛物質</li>
-            <li><strong>S8 大麻素</strong>：如四氫大麻酚 (THC)，含<strong>火麻仁</strong></li>
-            <li><strong>S9 糖皮質類固醇</strong>：強力抗發炎及代謝調節劑</li>
-          </ul>
+        <p style="font-size:0.42em; color:#ddd; line-height:1.6; margin:0 0 10px 0;">
+          台灣網球選手曹家宜，於 2025 年 1 月奧克蘭女網賽尿檢中被檢出禁用物質**甲基麻黃鹼**陽性。
+        </p>
+        <ul class="custom-list" style="font-size:0.4em;">
+          <li><strong>違規來源</strong>：因感冒症狀服用常見日本市售感冒藥「大正百保能 GOLD A」。</li>
+          <li><strong>判罰結果</strong>：雖然經紀公司力證其非蓄意，但 ITIA 仍於 2025 年 6 月判處其**自願停賽並禁賽 12 個月**，取消該賽事積分。</li>
+          <li><strong>防護啟示</strong>：市售感冒藥、中成藥即使寫着「家庭常備」，依然是運動禁藥的高發區。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 7: 法律後果：禁藥違規可能面臨的處分 -->
+    <section>
+      <h2>違規處分與法律後果</h2>
+      <div class="glass-card">
+        <ul class="custom-list">
+          <li><strong>成績與獎牌取消</strong>：立刻取消當場賽事成績，沒收獎牌、獎金及個人積分。</li>
+          <li><strong>全球禁賽處分</strong>：首犯者若是蓄意最高可處 <strong>4 年禁賽</strong>；非故意但有疏忽者（如曹家宜案）處 <strong>1 至 2 年禁賽</strong>。</li>
+          <li><strong>教練及團隊連帶責任</strong>：若查出教練或隨隊防護人員唆使、協助或過失提供藥物，團隊成員也將面臨全球禁賽及撤照處置。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 8: 【情境互動題 1】隊友分享的感冒中藥茶 -->
+    <section>
+      <h2>情境模擬 1</h2>
+      <div class="scenario-box">
+        <div class="scenario-question">
+          <strong>【情境 1】</strong> 距離大專杯比賽還有 3 天，阿明感冒咳嗽不止。隊友熱心地倒了一杯自己從中藥行配的「祖傳止咳潤肺茶」給阿明喝，保證是純天然中藥草熬製，絕對不含任何西藥。阿明喉嚨難受，是否應該喝下這杯茶？
+        </div>
+        <div class="scenario-options" id="sc-opts-1">
+          <button class="scenario-btn" id="sc-btn-1-1" onclick="selectScenario(1, 1, false, '❌ <strong>錯誤決定！</strong> 中藥行自行配製的「祖傳止咳茶」極易含有<strong>麻黃</strong>（含麻黃素，S6興奮劑）或<strong>細辛/半夏</strong>。如果喝下，3天後的賽內藥檢極大機率呈現陽性，由於「嚴格責任原則」，阿明將直接面臨1至2年禁賽，隊友的保證無法免責。')">
+            A：喝下去。既然是純天然的中藥且隊友喝過沒事，應該不會被驗出西藥禁藥。
+          </button>
+          <button class="scenario-btn" id="sc-btn-1-2" onclick="selectScenario(1, 2, true, '✓ <strong>正確決定！</strong> 阿明應該堅決拒絕。任何未經 WADA/CTADA 實證比對的天然草藥茶均具高風險。阿明應前往醫院表明運動員身分就醫，並開立已知安全的替代中藥或西藥處方。')">
+            B：拒絕喝。表明自己面臨賽前藥檢，不能服用任何成分不明、未經安全查核的天然藥草茶。
+          </button>
+        </div>
+        <div class="scenario-feedback" id="sc-fb-1"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         MODULE 2: WADA 2026 禁用物質分類與藥理機制 (第 9 - 17 頁)
+         ========================================================== -->
+
+    <!-- Page 9: 2026 WADA 禁用物質清單結構（S0 至 S9 類別） -->
+    <section>
+      <h2>禁用物質清單結構</h2>
+      <div class="glass-card">
+        <div style="font-size:0.52em; color:#ccc; margin-bottom:12px;">
+          WADA《禁用清單》將所有物質與方法依藥理作用劃分為以下類別：
+        </div>
+        <div class="grid-2" style="font-size:0.42em; line-height:1.6;">
+          <div>
+            <ul class="custom-list cyan-bullet" style="font-size:0.9em;">
+              <li><strong>S0</strong>：未經政府核准之人用物質</li>
+              <li><strong>S1</strong>：同化性物質 (Anabolic Agents)</li>
+              <li><strong>S2</strong>：肽類荷爾蒙、生長因子</li>
+              <li><strong>S3</strong>：$\beta_2$ 致效劑 (Beta-2 Agonists)</li>
+              <li><strong>S4</strong>：荷爾蒙及代謝調節劑</li>
+              <li><strong>S5</strong>：利尿劑及其他遮蔽劑</li>
+            </ul>
+          </div>
+          <div>
+            <ul class="custom-list" style="font-size:0.9em; padding-left:10px;">
+              <li><strong>S6</strong>：興奮劑 (Stimulants)</li>
+              <li><strong>S7</strong>：麻醉劑 (Narcotics)</li>
+              <li><strong>S8</strong>：大麻素 (Cannabinoids)</li>
+              <li><strong>S9</strong>：糖皮質類固醇</li>
+              <li><strong>M1-M3</strong>：禁用方法 (如血液增強)</li>
+              <li><strong>P1</strong>：特定運動禁用物質 (乙型阻斷劑)</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Slide 5: 去甲烏藥鹼定量數據 -->
+    <!-- Page 10: 管制時程分類：全時段禁用（賽內賽外） vs. 賽內禁用 -->
     <section>
-      <h2>三、 去甲烏藥鹼 (Higenamine) 定量數據</h2>
+      <h2>禁用時程分類</h2>
+      <div class="vs-container">
+        <div class="vs-box left">
+          <div class="vs-badge left">全時段禁用 (賽內及賽外)</div>
+          <p style="font-size:0.42em; color:#ddd; line-height:1.6; margin:0;">
+            包含 **S0 至 S5 類**。無論是平時訓練（賽外）或是競賽期間（賽內），只要尿液或血液樣本中被驗出，即構成違規。
+          </p>
+        </div>
+        <div class="vs-center">VS</div>
+        <div class="vs-box right">
+          <div class="vs-badge right">僅限賽內禁用 (比賽期間)</div>
+          <p style="font-size:0.42em; color:#ddd; line-height:1.6; margin:0;">
+            包含 **S6 至 S9 類**。僅在比賽當天（通常為賽前12小時起至檢體收集結束）禁止使用。但注意：若平時服用但殘留至賽內被驗出，依然判定違規。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 11: S1 類：同化性物質（Anabolic Agents）與中藥關聯（如麝香） -->
+    <section>
+      <h2>S1 同化性物質與中藥風險</h2>
+      <div class="glass-card">
+        <div class="icon-title-row">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+          <h3>同化性物質 (S1 類)</h3>
+        </div>
+        <ul class="custom-list">
+          <li><strong>作用與分類</strong>：俗稱類固醇。具促進蛋白質同化合成、顯著增長肌肉力量之功效。</li>
+          <li><strong>中藥風險來源：麝香 (Musk)</strong></li>
+          <li><strong>化學結構</strong>：除了麝香酮，天然麝香含有多種 androstane 雄性素類似物，具蛋白質同化作用，被列為**任何時間皆禁用**之物質。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 12: S2 類：肽類荷爾蒙與生長因子（如初乳中的 IGF-1 影響） -->
+    <section>
+      <h2>S2 肽類荷爾蒙、生長因子與初乳</h2>
+      <div class="glass-card">
+        <ul class="custom-list">
+          <li><strong>S2 禁用物質</strong>：如促紅血球生成素 (EPO)、人體生長激素 (hGH)、胰島素樣生長因子 (IGF-1)。</li>
+          <li><strong>動物類補充劑風險：牛初乳 (Colostrum)</strong></li>
+          <li><strong>藥理活性</strong>：初乳天然富含高濃度 IGF-1。雖然 WADA 未明令禁止初乳食品，但警告其內含生長因子極可能導致運動員尿中 GH/IGF-1 檢測比值異常。</li>
+          <li><strong>WADA 指引結論</strong>：**WADA 明確不建議運動員服用初乳產品**。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 13: S3 類：$\beta_2$ 致效劑（去甲烏藥鹼的作用機制） -->
+    <section>
+      <h2>S3 $\beta_2$ 致效劑與氣管擴張</h2>
+      <div class="glass-card">
+        <ul class="custom-list">
+          <li><strong>致效劑作用</strong>：作用於肺部與支氣管之乙型交感神經受體，產生顯著的支氣管擴張及強心、強肺活量效果。</li>
+          <li><strong>中草藥風險核心：去甲烏藥鹼 (Higenamine)</strong></li>
+          <li><strong>列管狀態</strong>：2017 年起被 WADA 列入 **S3 類，賽內賽外全時段禁用**。</li>
+          <li><strong>防護警示</strong>：去甲烏藥鹼廣泛存在於蓮子心、黃柏、附子、細辛及大量辛香料中。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 14: S4 類：荷爾蒙及代謝調節劑（紫河車與胎盤素） -->
+    <section>
+      <h2>S4 荷爾蒙調節劑與胎盤</h2>
+      <div class="glass-card">
+        <ul class="custom-list">
+          <li><strong>荷爾蒙調節劑 (S4)</strong>：旨在防範運動員以外源性物質人為干涉體內內分泌或雌雄激素比例。</li>
+          <li><strong>中藥風險來源：紫河車（人類胎盤）與動物胎盤（如鹿胎盤）</strong></li>
+          <li><strong>成分分析</strong>：胎盤天然含有多種複雜荷爾蒙（催產素、雌激素、黃體素、ACTH 等）。</li>
+          <li><strong>內分泌風險</strong>：服用此類藥物極易干擾尿液或血液中的荷爾蒙檢測值，被列為 **S4 禁用物質** 範疇。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 15: S5 類：利尿劑與遮蔽劑（中藥地膚子、防己） -->
+    <section>
+      <h2>S5 利尿劑、遮蔽劑與中藥利尿</h2>
+      <div class="glass-card">
+        <ul class="custom-list">
+          <li><strong>利尿劑與遮蔽劑 (S5)</strong>：禁用目的在於防範運動員試圖稀釋尿液檢體、或加速體內其他違禁藥物的排泄以規避藥檢。</li>
+          <li><strong>中草藥風險來源</strong>：臨床常用的利尿通淋、消水腫中藥，如**地膚子**、**防己**等。</li>
+          <li><strong>污染與遮蔽</strong>：中醫利尿複方在加速排尿的同時，也天然含有可能影響尿比重與排除特徵的活性物質，需謹慎面對其 S5 遮蔽風險。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 16: S6 類：興奮劑（麻黃鹼、半夏、馬錢子） -->
+    <section>
+      <h2>S6 興奮劑中藥核心成員</h2>
+      <div class="glass-card">
+        <div class="icon-title-row">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h-2v-2h4v8zm0-10h-2V5h-2V3h4v4z"/></svg>
+          <h3>禁用興奮劑 (S6 類，賽內禁用)</h3>
+        </div>
+        <ul class="custom-list">
+          <li><strong>麻黃 (Ephedra)</strong>：含麻黃鹼與偽麻黃鹼，強烈興奮中樞神經，為葛根湯、小青龍湯主藥。</li>
+          <li><strong>半夏 (Pinellia)</strong>：含有 **L-麻黃鹼 (L-ephedrine)**，為止咳化痰複方常用藥材。</li>
+          <li><strong>馬錢子 (Strychnos)</strong>：含有 **番木鼈鹼 (Strychnine)**，神經興奮作用強且具劇烈毒性。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 17: 【情境互動題 2】「天然提神茶包」的誘惑 -->
+    <section>
+      <h2>情境模擬 2</h2>
+      <div class="scenario-box">
+        <div class="scenario-question">
+          <strong>【情境 2】</strong> 比賽期間（賽內），阿明感到體力不支，上網購買了一款宣稱是「草本天然漢方提神配方」的茶包，成分標示包含：人參、黃耆、五味子、刺五加，以及「酸橙花」與「枳殼葉」。阿明是否可以在賽前飲用此茶？
+        </div>
+        <div class="scenario-options" id="sc-opts-2">
+          <button class="scenario-btn" id="sc-btn-2-1" onclick="selectScenario(2, 1, false, '❌ <strong>錯誤決定！</strong> 「酸橙（苦橙）」與「枳殼」天然含有 <strong>Synephrine (辛弗林)</strong> 且含有微量 <strong>Octopamine (章魚胺)</strong>。章魚胺屬於 <strong>S6 類賽內禁用興奮劑</strong>，若在比賽當天（賽內）喝下此茶，藥檢陽性風險極高！')">
+            A：可以喝，黃耆、人參和枳殼都是溫和補氣理氣藥，不算西藥禁藥。
+          </button>
+          <button class="scenario-btn" id="sc-btn-2-2" onclick="selectScenario(2, 2, true, '✓ <strong>正確決定！</strong> 阿明應該避免飲用。枳實/枳殼（來自酸橙/苦橙）中含有微量<strong>章魚胺 (Octopamine)</strong>，此成分屬於 <strong>S6 賽內禁用興奮劑</strong>。任何標示不明或含酸橙萃取物的草本補充劑均具賽內違規風險。')">
+            B：拒絕喝。枳殼為酸橙未成熟果實，富含辛弗林並含微量章魚胺（S6賽內禁用興奮劑），賽內喝極具風險。
+          </button>
+        </div>
+        <div class="scenario-feedback" id="sc-fb-2"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         MODULE 3: 去甲烏藥鹼 (Higenamine) 定量與跨界風險 (第 18 - 25 頁)
+         ========================================================== -->
+
+    <!-- Page 18: 去甲烏藥鹼 S3 禁用背景：Sakho 停賽事件 -->
+    <section>
+      <h2>去甲烏藥鹼禁用歷史</h2>
+      <div class="glass-card">
+        <div class="icon-title-row">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h-2v-2h4v8zm0-10h-2V5h-2V3h4v4z"/></svg>
+          <h3>去甲烏藥鹼 (Higenamine) 列管始末</h3>
+        </div>
+        <ul class="custom-list">
+          <li><strong>最初狀態</strong>：原被列在 WADA 監視計畫（Monitoring Program）中。</li>
+          <li><strong> Sakho 禁賽風波 (2016)</strong>：法國足球明星 Mamadou Sakho 在藥檢中被檢出 Higenamine 呈陽性，引發足壇與反禁藥界巨大震動。</li>
+          <li><strong>正式禁用 (2017)</strong>：WADA 在 2017 年 1 月 1 日將其正式移入《禁用清單》**S3 類（全時段禁用）**。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 19: 檢測閥值：尿檢中去甲烏藥鹼陽性閾值（10 ng/mL） -->
+    <section>
+      <h2>去甲烏藥鹼陽性閾值</h2>
+      <div class="glass-card">
+        <ul class="custom-list">
+          <li><strong>閥值定義</strong>：WADA 規定的去甲烏藥鹼尿液檢測上限值為 **10 ng/mL**（十億分之十）。</li>
+          <li><strong>嚴格的微量標準</strong>：由於靈敏度極高，哪怕僅攝入微克級別的去甲烏藥鹼分子，也會在尿液排泄中輕鬆突破 10 ng/mL 閾值。</li>
+          <li><strong>中草藥交叉污染</strong>：許多選手宣稱只是喝了中藥補湯、滷肉，因其中含有丁香、細辛等，藥檢便被化驗出高於 10 ng/mL 的陽性結果。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 20: 高醫大定量普查：臺灣市售中藥材去甲烏藥鹼含量 -->
+    <section>
+      <h2>臺灣市售中藥材含量普查</h2>
       <div class="glass-card">
         <div style="font-size:0.55em; margin-bottom:12px; color:#ccc;">
-          WADA S3 類（$\beta_2$ 致效劑）全時段禁用，尿液陽性判定閾值為 <strong>10 ng/mL</strong>。
-          以下為高醫大許美智教授團隊針對臺灣市售藥材所做的普查定量分析數據：
+          高醫大許美智教授團隊大規模篩檢臺灣市售藥材之 Higenamine 平均含量：
         </div>
         <div class="stat-row">
           <div class="stat-card">
             <div class="title">蓮子心</div>
             <div class="val">65.00<span class="unit">&mu;g/g</span></div>
-            <div class="risk high">極高風險 (含量最高)</div>
+            <div class="risk high">極高風險 (居市售藥材之冠)</div>
           </div>
           <div class="stat-card">
             <div class="title">黃柏</div>
             <div class="val">26.20<span class="unit">&mu;g/g</span></div>
-            <div class="risk high">極高風險</div>
-          </div>
-          <div class="stat-card">
-            <div class="title">附子 (烏頭屬)</div>
-            <div class="val">檢出<span class="unit">含有</span></div>
-            <div class="risk high">高風險</div>
-          </div>
-          <div class="stat-card">
-            <div class="title">細辛</div>
-            <div class="val">檢出<span class="unit">含有</span></div>
-            <div class="risk high">高風險</div>
-          </div>
-          <div class="stat-card">
-            <div class="title">吳茱萸</div>
-            <div class="val">檢出<span class="unit">含有</span></div>
-            <div class="risk mid">中高風險</div>
+            <div class="risk high">極高風險 (燥濕清熱要藥)</div>
           </div>
         </div>
         <div style="font-size:0.38em; color:var(--accent-cyan); text-align:center; margin-top:14px; font-weight:700;">
-          * 警示歷史：法國球員 Sakho 因檢出去甲烏藥鹼遭停賽；日本乒協曾發布公告警告選手禁用含有南天竹的止咳喉糖。
+          * 警示：蓮子心去甲烏藥鹼濃度顯著。口服試驗顯示，連續3天服用0.8g蓮子心，受試者尿檢去甲烏藥鹼皆大幅高於 10 ng/mL。
         </div>
       </div>
     </section>
 
-    <!-- Slide 6: 跨界日常植物與食材風險 -->
+    <!-- Page 21: 中藥方劑核心：附子、細辛、吳茱萸在溫陽方劑中的風險 -->
     <section>
-      <h2>去甲烏藥鹼：隱藏的跨界日常來源</h2>
+      <h2>附子、細辛與吳茱萸的威脅</h2>
+      <div class="glass-card">
+        <div style="font-size:0.52em; color:#ccc; margin-bottom:12px;">
+          除了蓮子心，去甲烏藥鹼天然存在於溫裏祛寒、開鬱散寒的常用藥材中：
+        </div>
+        <ul class="custom-list">
+          <li><strong>附子 (烏頭屬)</strong>：溫補命門主藥，存在於四逆湯、參附湯、八味地黃丸。口服後極易檢出陽性。</li>
+          <li><strong>細辛</strong>：祛風散寒、止痛要藥，存在於獨活寄生湯、小青龍湯、麻黃附子細辛湯。</li>
+          <li><strong>吳茱萸</strong>：溫經散寒主藥，存在於溫經湯、吳茱萸湯。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 22: 跨界日常食品：釋迦與日本南天竹喉糖之去甲烏藥鹼潛在風險 -->
+    <section>
+      <h2>跨界食品與喉糖警示</h2>
       <div class="grid-2">
         <div class="glass-card">
           <div class="icon-title-row">
-            <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 11.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            <h3>日常食品與水果風險</h3>
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+            <h3>釋迦 (Annona squamosa)</h3>
           </div>
-          <ul class="custom-list">
-            <li><strong>日本南天竹喉糖</strong>：常見藥妝，大量或長期服用具陽性檢出風險。</li>
-            <li><strong>釋迦 (Annona squamosa)</strong>：水果果肉天然含有去甲烏藥鹼，賽前應避免過量。</li>
-            <li><strong>拉拉藤與波葉青牛膽</strong>：部分草本調配茶或藥膏之常見成分。</li>
-          </ul>
+          <p style="font-size:0.42em; color:#ddd; line-height:1.6; margin:0;">
+            番荔枝科的水果如釋迦，其果肉與果皮天然而富含去甲烏藥鹼。運動員於賽前兩週應避免過量食用，防堵非蓄意藥檢超標。
+          </p>
         </div>
         <div class="glass-card">
           <div class="icon-title-row">
-            <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7z"/></svg>
-            <h3>調味與特色辛香料</h3>
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+            <h3>日本南天竹喉糖</h3>
           </div>
-          <ul class="custom-list">
-            <li><strong>木姜子 (馬告)</strong>：特色辛香料，天然含有去甲烏藥鹼成分。</li>
-            <li><strong>白胡椒 & 蓽茇 (長胡椒)</strong>：日常料理佐料，亦具微量檢出風險。</li>
-            <li><strong>丁香 & 花椒</strong>：藥膳滷包常見成分，運動員賽前兩週應減少攝食。</li>
-          </ul>
+          <p style="font-size:0.42em; color:#ddd; line-height:1.6; margin:0;">
+            日本著名感冒糖常添加南天竹。2017 年日本乒協專門就此發布公告，禁止運動員在賽期服用指南中含有南天竹的任何防咳喉糖。
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Slide 7: 去甲烏藥鹼清除排除模擬器 -->
+    <!-- Page 23: 跨界辛香料與滷包：木姜子、月桂葉、胡椒、丁香、花椒 -->
+    <section>
+      <h2>跨界辛香料與藥膳</h2>
+      <div class="glass-card">
+        <div style="font-size:0.52em; color:#ccc; margin-bottom:12px;">
+          去甲烏藥鹼亦存在於多種日常料理調味料中：
+        </div>
+        <ul class="custom-list">
+          <li><strong>木姜子 (馬告)</strong>：原住民常見辛香料，含有去甲烏藥鹼。</li>
+          <li><strong>月桂葉 & 白胡椒 & 蓽茇</strong>：日常廚房與滷包配料，均含微量去甲烏藥鹼。</li>
+          <li><strong>丁香 & 花椒</strong>：為中藥亦為日常調味料。雖然烹調中單次吃入的總劑量不高，但賽前應減少高劑量藥膳麻辣鍋等攝取。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 24: 【清除率模擬器】口服四逆湯之去甲烏藥鹼尿液代謝拉桿 -->
     <section>
       <h2>去甲烏藥鹼排除模擬器 (口服四逆湯)</h2>
       <div class="simulator-container">
@@ -719,8 +1055,8 @@
           </div>
           <ul class="custom-list" style="font-size:0.36em; line-height:1.7;">
             <li>試驗方劑：四逆湯科學中藥濃縮製劑 (含附子)</li>
-            <li>排除半衰期：尿中濃度急速上升，後隨時間指數衰減</li>
-            <li>判定界限值：低於 <strong>10 ng/mL</strong> 判定為安全陰性</li>
+            <li>排除特徵：吸收後尿液濃度極速衝高，後隨時間呈指數衰減</li>
+            <li>陽性界限：高於 <strong>10 ng/mL</strong> 判定為禁藥陽性違規</li>
           </ul>
         </div>
 
@@ -734,183 +1070,351 @@
       </div>
     </section>
 
-    <!-- Slide 8: 葛根湯與小青龍湯動力學研究 -->
+    <!-- Page 25: 【情境互動題 3】端午節的退火蓮子心湯 -->
     <section>
-      <h2>四、 葛根湯與小青龍湯臨床動力學數據</h2>
+      <h2>情境模擬 3</h2>
+      <div class="scenario-box">
+        <div class="scenario-question">
+          <strong>【情境 3】</strong> 端午節前夕，天氣炎熱，阿明的祖母特別熬煮了一鍋「去火蓮子心綠豆湯」給阿明退火。阿明一星期後即將面臨全國錦標賽藥檢。阿明是否可以食用這碗祖母特製的愛心綠豆湯？
+        </div>
+        <div class="scenario-options" id="sc-opts-3">
+          <button class="scenario-btn" id="sc-btn-3-1" onclick="selectScenario(3, 1, false, '❌ <strong>錯誤決定！</strong> <strong>蓮子心</strong>去甲烏藥鹼平均含量高達 <strong>65.00 $\mu$g/g</strong>，是目前市售藥材中含量之冠！口服0.8g即可導致數天內藥檢超標陽性。一星期後即將藥檢，吃下這碗湯具有極高的違規風險，祖母的愛心可能導致禁賽處分！')">
+            A：可以吃。這是祖母自己用綠豆和蓮子熬的甜湯，又不是中藥方劑，不會有藥檢問題。
+          </button>
+          <button class="scenario-btn" id="sc-btn-3-2" onclick="selectScenario(3, 2, true, '✓ <strong>正確決定！</strong> 阿明應該避免食用。<strong>蓮子心</strong>含有高濃度的<strong>去甲烏藥鹼（Higenamine）</strong>，此成分為 WADA 全時段禁用之 S3 類物質。即使是日常甜湯，食用高含量的蓮子心亦極易導致藥檢呈現陽性違規。')">
+            B：拒絕吃。溫和向祖母解釋自己正面臨禁藥藥檢，而蓮子心含有禁用強心成分「去甲烏藥鹼」，賽前必須完全避開。
+          </button>
+        </div>
+        <div class="scenario-feedback" id="sc-fb-3"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         MODULE 4: 麻黃與感冒方劑尿液排除臨床研究 (第 26 - 32 頁)
+         ========================================================== -->
+
+    <!-- Page 26: 麻黃 (Ephedra) 與 S6 興奮劑限制：尿中麻黃鹼 10 $\mu$g/mL 閥值 -->
+    <section>
+      <h2>麻黃與麻黃素禁用閥值</h2>
       <div class="glass-card">
-        <div style="font-size:0.52em; margin-bottom:15px; color:#ccc;">
-          學術文獻針對健康受試者服用 **葛根湯 (Kakkon-to)** 與 **小青龍湯 (Sho-seiryu-to)** 進行的排除研究指出：
-        </div>
-        <div class="grid-2" style="font-size:0.45em; line-height:1.6;">
-          <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:10px; border-left:3px solid var(--accent-cyan);">
-            <h4 style="margin-top:0; color:var(--accent-cyan);">單次服用 (2.5g 單劑量)</h4>
-            <ul class="custom-list cyan-bullet" style="font-size:0.85em; padding-left:10px;">
-              <li><strong>代謝峰值</strong>：尿液中麻黃素濃度在 <strong>6 ~ 8 小時</strong>達最高峰，並在 <strong>48 小時內</strong>排除。</li>
-              <li><strong>峰值濃度 (Cmax)</strong>：葛根湯組麻黃鹼平均為 4.35 $\mu$g/mL；小青龍湯組為 3.90 $\mu$g/mL。</li>
-              <li><strong>風險判定</strong>：均低於 WADA 容許閥值 (10 $\mu$g/mL)，<strong>單次服用不構成違規</strong>。</li>
-            </ul>
-          </div>
-          <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:10px; border-left:3px solid var(--accent-orange);">
-            <h4 style="margin-top:0; color:var(--accent-orange);">連續多次服用 (3天，每日3次)</h4>
-            <ul class="custom-list" style="font-size:0.85em; padding-left:10px;">
-              <li><strong>藥物累積效應</strong>：隨服用頻率與天數增加，麻黃鹼會在體內迅速累積超標。</li>
-              <li><strong>累積濃度</strong>：**小青龍湯組排除達 13.73 $\mu$g/mL**；**葛根湯組排除更達 39.03 $\mu$g/mL**。</li>
-              <li><strong>風險判定</strong>：均大幅超過 WADA 的 10 $\mu$g/mL 上限，**連續服用必定呈檢測陽性**。</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="custom-list">
+          <li><strong>活性鹼類</strong>：麻黃 (Ephedra) 天然含有高濃度麻黃鹼 (Ephedrine) 與偽麻黃鹼 (Pseudoephedrine)。</li>
+          <li><strong>WADA 管制標準 (S6 興奮劑)</strong>：**僅限賽內禁用**。</li>
+          <li><strong>尿液容許閥值</strong>：
+            - 麻黃鹼尿液檢出濃度高於 **10 $\mu$g/mL** 判定為違規。
+            - 偽麻黃鹼尿液檢出濃度高於 **150 $\mu$g/mL** 判定為違規。
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- Slide 9: 興奮劑 S6 類藥材 -->
+    <!-- Page 27: 2026 最新文獻：葛根湯單次服用 2.5g 之 Cmax 與半衰期 -->
     <section>
-      <h2>五、 興奮劑 (S6 類) 高風險中藥</h2>
-      <div class="grid-3">
-        <div class="glass-card">
-          <h3 style="color:var(--accent-orange); font-size:0.8em; margin-bottom:10px;">麻黃 (Ephedrine)</h3>
-          <ul class="custom-list" style="font-size:0.48em;">
-            <li><strong>禁用標準</strong>：麻黃鹼 &gt; 10 &mu;g/mL</li>
-            <li><strong>方劑風險</strong>：葛根湯、小青龍湯、防風通聖散、麻杏甘石湯。</li>
-            <li><strong>防護盲點</strong>：多數方劑名稱中不帶「麻黃」字樣，易使選手防不勝防。</li>
-          </ul>
-        </div>
-        <div class="glass-card">
-          <h3 style="color:var(--accent-orange); font-size:0.8em; margin-bottom:10px;">半夏 (L-ephedrine)</h3>
-          <ul class="custom-list" style="font-size:0.48em;">
-            <li><strong>禁用標準</strong>：含有左旋麻黃鹼</li>
-            <li><strong>方劑風險</strong>：二陳湯、小柴胡湯、麥門冬湯、溫膽湯等 30 多種方劑。</li>
-            <li><strong>防護盲點</strong>：為止咳化痰常備藥物，易在不知情下引入麻黃鹼。</li>
-          </ul>
-        </div>
-        <div class="glass-card">
-          <h3 style="color:var(--accent-orange); font-size:0.8em; margin-bottom:10px;">馬錢子 (Strychnine)</h3>
-          <ul class="custom-list" style="font-size:0.48em;">
-            <li><strong>禁用標準</strong>：含有番木鼈鹼</li>
-            <li><strong>藥理毒性</strong>：強烈興奮脊髓與中樞神經，毒性極大。</li>
-            <li><strong>中毒特徵</strong>：小劑量引發焦慮僵硬；大劑量可在 15-30 分鐘內引發劇烈抽搐直至窒息，嚴禁內服。</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 10: 同化性、荷爾蒙與大麻素 (S1, S2, S4, S8) -->
-    <section>
-      <h2>六、 同化性、荷爾蒙與大麻素中藥及案例</h2>
-      <div class="grid-2">
-        <div class="glass-card">
-          <div class="icon-title-row">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
-            <h3>S1 / S2 / S4 類中藥</h3>
-          </div>
-          <ul class="custom-list" style="font-size:0.45em;">
-            <li><strong>麝香 (Musk, S1)</strong>：含 androstane 雄性素結構，具同化作用，全時段禁用。</li>
-            <li><strong>牛膝 (牛膝/川牛膝, S1)</strong>：富含<strong>蛻皮激素 (Ecdysterone)</strong>，具同化作用以促進肌肉生長，已列入 WADA 監控計畫。</li>
-            <li><strong>初乳 (Colostrum, S2)</strong>：含高濃度 <strong>IGF-1</strong> 生長因子，干擾內源性 GH 藥檢，WADA 建議避免使用。</li>
-            <li><strong>紫河車與胎盤 (S4)</strong>：含雌激素、黃體素等，影響內分泌。經典避雷：籃球員 Cooper 使用懷孕伴侶尿液被測出 hCG 陽性判禁賽。</li>
-          </ul>
-        </div>
-        <div class="glass-card">
-          <div class="icon-title-row">
-            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            <h3>S8 大麻素及 2025-2026 時事</h3>
-          </div>
-          <ul class="custom-list" style="font-size:0.45em;">
-            <li><strong>火麻仁 (大麻種子)</strong>：籽本身幾乎不含 THC，但在採收與製程中極易受花葉污染導致尿檢 THC 呈陽性。</li>
-            <li><strong>2025/05 中職洋投猛登案</strong>：因休賽季接觸大麻，隊內春訓藥檢未過遭兄弟球團解約。</li>
-            <li><strong>2026/05 日本男排代表佐藤案</strong>：排球代表隊佐藤駿一郎涉嫌持有大麻遭逮，隨即遭國家隊除名。</li>
-            <li><strong>泰國政策轉向 (2026年4月)</strong>：正式生效新部級法規，大麻回歸「僅限醫療用途」，非醫療持有將受處罰。</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 11: 睪固酮促進劑與補充品污染風險 -->
-    <section>
-      <h2>七、 補充品與天然睪固酮促進劑污染風險</h2>
+      <h2>葛根湯單劑量動力學研究</h2>
       <div class="glass-card">
-        <div style="font-size:0.52em; margin-bottom:15px; color:#ccc;">
-          澳洲運動學院（AIS）將營養補充品分為四級，<strong>Group D（禁用或高風險污染）</strong> 明確警告運動員禁止服用：
+        <div style="font-size:0.52em; color:#ccc; margin-bottom:12px;">
+          最新 2026 學術文獻中，對受試者單次服用 2.5g 葛根湯濃縮顆粒的監測指出：
         </div>
-        <div class="grid-3" style="font-size:0.42em; line-height:1.6;">
-          <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:10px; border-top:3px solid var(--accent-orange);">
-            <h4 style="margin-top:0; color:var(--accent-orange);">蒺藜 (Tribulus)</h4>
-            <p style="color:#bbb; font-size:0.85em;">被宣稱為天然睪固酮促進劑，但實務上常摻雜禁用成分，列為 Group D。</p>
-          </div>
-          <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:10px; border-top:3px solid var(--accent-orange);">
-            <h4 style="margin-top:0; color:var(--accent-orange);">東革阿里 (Tongkat Ali)</h4>
-            <p style="color:#bbb; font-size:0.85em;">含有寬纓酮，人體不改變尿 T/E，但補充劑產品因製程受禁藥污染率極高，列為 Group D。</p>
-          </div>
-          <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:10px; border-top:3px solid var(--accent-orange);">
-            <h4 style="margin-top:0; color:var(--accent-orange);">瑪卡 (Maca)</h4>
-            <p style="color:#bbb; font-size:0.85em;">本身不含禁藥，但常被商人摻雜 Sildenafil (威而鋼/西地那非) 或合成類固醇，列為 Group D。</p>
-          </div>
-        </div>
+        <ul class="custom-list">
+          <li><strong>排泄最高峰 (Tmax)</strong>：尿中麻黃素濃度在服藥後 <strong>6 ~ 8 小時</strong>達最高峰。</li>
+          <li><strong>最高峰值 (Cmax)</strong>：麻黃鹼平均為 <strong>4.35 $\pm$ 1.82 $\mu$g/mL</strong>（低於 WADA 10 $\mu$g/mL 限值）。</li>
+          <li><strong>排除半衰期</strong>：麻黃鹼半衰期平均約為 <strong>5.2 $\pm$ 1.2 小時</strong>，48 小時後完全清除。</li>
+          <li><strong>單次結論</strong>：單次服用葛根湯，尿中麻黃鹼濃度**不會超標**。</li>
+        </ul>
       </div>
     </section>
 
-    <!-- Slide 12: 醫療與防護人員口訣「問、查、換、申」 -->
+    <!-- Page 28: 2026 最新文獻：小青龍湯單次服用 2.5g 之 Cmax 與半衰期 -->
     <section>
-      <h2>八、 醫療與防護人員防護口訣「問、查、換、申」</h2>
+      <h2>小青龍湯單劑量動力學研究</h2>
       <div class="glass-card">
-        <div style="font-size:0.55em; margin-bottom:12px; color:#ccc;">
-          臨床中醫師、藥師與隨隊防護團隊在開立中草藥處方或給予諮詢時，應落實以下四字工作口訣：
+        <div style="font-size:0.52em; color:#ccc; margin-bottom:12px;">
+          對受試者單次口服 2.5g 小青龍湯（含有麻黃與半夏）的監測顯示：
         </div>
-        <div class="grid-2">
-          <div>
-            <ul class="custom-list cyan-bullet" style="font-size:0.48em; line-height:1.7;">
-              <li><strong>問 (Ask) ── 主動詢問身分</strong>：<br>主動詢問就診者是否為職業或優秀學生運動員，了解其近期是否有重大賽事及藥檢行程。</li>
-              <li><strong>查 (Check) ── 實證成分查核</strong>：<br>精準核對科學中藥處方複方，善用 Global DRO、CTADA 運動禁藥查詢系統進行成分確認。</li>
-            </ul>
-          </div>
-          <div>
-            <ul class="custom-list cyan-bullet" style="font-size:0.48em; line-height:1.7;">
-              <li><strong>換 (Substitute) ── 尋求安全替代</strong>：<br>若方劑含禁用物質，主動利用中醫藥理進行安全換藥。例如以紫菀、款冬花、枇杷葉代替麻黃與半夏。</li>
-              <li><strong>申 (Apply) ── 協助 TUE 申請</strong>：<br>若臨床必須使用且無安全替代，必須協助選手開立完整臨床病歷診斷以申請治療用途豁免 (TUE)。</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="custom-list">
+          <li><strong>峰值時間與排除</strong>：尿中麻黃素與偽麻黃鹼大約在 <strong>6 小時</strong>達峰，並在 <strong>48 小時內</strong>排除。</li>
+          <li><strong>最大濃度 (Cmax)</strong>：尿中麻黃鹼平均峰值為 <strong>3.90 $\pm$ 1.90 $\mu$g/mL</strong>（低於 10 $\mu$g/mL 限值）。</li>
+          <li><strong>排除半衰期</strong>：排除半衰期平均約為 <strong>5.3 $\pm$ 1.2 小時</strong>。</li>
+          <li><strong>單次結論</strong>：與葛根湯類似，單次單劑量小青龍湯不會直接引發禁藥違規判定。</li>
+        </ul>
       </div>
     </section>
 
-    <!-- Slide 13: 選手用藥避雷防護指引 -->
+    <!-- Page 29: 累積超標效應：連續服用 3 天 -->
     <section>
-      <h2>九、 運動員防護五字訣與瘦肉精肉類污染</h2>
+      <h2>累積給藥之超標違規風險</h2>
+      <div class="glass-card highlight">
+        <div style="font-size:0.52em; color:#ccc; margin-bottom:10px;">
+          然而，若模擬常規感冒治療：**連續 3 天，每日服用 3 次（每次 2.5g）**：
+        </div>
+        <ul class="custom-list">
+          <li><strong>小青龍湯組</strong>：麻黃鹼在體內產生顯著堆積，尿檢測得排除濃度達 **13.73 $\mu$g/mL**（超標違規）。</li>
+          <li><strong>葛根湯組</strong>：藥物堆積更為嚴重，尿中麻黃鹼最高濃度飆高至 **39.03 $\mu$g/mL**（超標近 4 倍！）。</li>
+          <li><strong>防護鐵則</strong>：**中藥麻黃感冒複方只要連續服用，必定導致賽內檢測陽性！**</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 30: 半夏的隱性威脅：L-麻黃鹼的藥理機制 -->
+    <section>
+      <h2>半夏與 L-麻黃鹼的威脅</h2>
+      <div class="glass-card">
+        <div class="icon-title-row">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+          <h3>止咳要藥：半夏 (Pinellia ternata)</h3>
+        </div>
+        <ul class="custom-list">
+          <li><strong>天然禁藥成分</strong>：塊莖含有生物鹼，其中包含 **L-麻黃鹼 (L-ephedrine)**。</li>
+          <li><strong>極高的覆蓋率</strong>：廣泛配伍於二陳湯、溫膽湯、小柴胡湯、麥門冬湯等三十多種日常止咳化痰成方。</li>
+          <li><strong>防護盲區</strong>：許多選手感冒不吃「麻黃」，卻服用了含有「半夏」的化痰止咳藥，藥檢依然被驗出麻黃鹼超標。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 31: 馬錢子：番木鼈鹼的劇毒興奮作用 -->
+    <section>
+      <h2>馬錢子與番木鼈鹼毒性</h2>
+      <div class="glass-card">
+        <ul class="custom-list">
+          <li><strong>主要成分：番木鼈鹼 (Strychnine)</strong></li>
+          <li><strong>禁藥歸類</strong>：S6 興奮劑，能極度興奮神經系統。</li>
+          <li><strong>大毒警告</strong>：安全性極低。超量或未經嚴格炮製內服，可在 **15-30 分鐘內** 引發肌肉疼痛、牙關緊閉、全身強直性抽搐，最終窒息致死。運動員應嚴格禁止內服。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 32: 【情境互動題 4】比賽前 5 天的感冒葛根湯 -->
+    <section>
+      <h2>情境模擬 4</h2>
+      <div class="scenario-box">
+        <div class="scenario-question">
+          <strong>【情境 4】</strong> 距離大專杯比賽（賽內藥檢）僅剩 5 天，阿明突發感冒發燒。教練建議他口服科學中藥「葛根湯」治療，每天吃 3 次，連續吃 3 天。阿明是否可以採納教練的建議？
+        </div>
+        <div class="scenario-options" id="sc-opts-4">
+          <button class="scenario-btn" id="sc-btn-4-1" onclick="selectScenario(4, 1, false, '❌ <strong>錯誤決定！</strong> 葛根湯連續服用 3 天後，尿液中的麻黃鹼濃度最高可累積高達 <strong>39.03 $\mu$g/mL</strong>（遠高於 WADA 10 $\mu$g/mL 限制）。麻黃鹼半衰期為 5.2 小時，停藥後僅有 2 天時間代謝，阿明在第 5 天的賽內檢測中極大機率超標陽性违规！')">
+            A：可以吃。距離比賽還有 5 天，只要在比賽前 2 天停藥，中藥排泄快，應該就能代謝乾淨。
+          </button>
+          <button class="scenario-btn" id="sc-btn-4-2" onclick="selectScenario(4, 2, true, '✓ <strong>正確決定！</strong> 阿明不應服用。連續 3 天服用葛根湯會導致尿中麻黃鹼飆升至 39.03 $\mu$g/mL，僅有 2 天停藥期不足以讓累積的麻黃素降至 10 $\mu$g/mL 以下。應改用已知絕對不含禁用興奮劑之感冒替代處方。')">
+            B：拒絕吃。向教練出示 2026 動力學研究數據，表明連續服用葛根湯會導致麻黃鹼嚴重堆積，停藥期太短必然導致藥檢陽性。
+          </button>
+        </div>
+        <div class="scenario-feedback" id="sc-fb-4"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         MODULE 5: 大麻素 (S8) 與補充品安全 (第 33 - 38 頁)
+         ========================================================== -->
+
+    <!-- Page 33: S8 大麻素：四氫大麻酚 (THC) 排除特徵 -->
+    <section>
+      <h2>S8 大麻素與人體排除</h2>
+      <div class="glass-card">
+        <ul class="custom-list">
+          <li><strong>大麻活性成分</strong>：主要為 **四氫大麻酚 (THC)**，作用於 CB1/CB2 神經與免疫受體。</li>
+          <li><strong>禁藥歸類 (S8 大麻素)</strong>：**賽內期間禁用**。</li>
+          <li><strong>排除風險</strong>：THC 具有極高的親脂性，極易蓄積於人體脂肪組織中，並隨腸道再吸收。這導致大麻在體內的清除速度極慢，吸食數週後尿液中仍可能檢出陽性。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 34: 火麻仁：中藥大麻種子製程 THC 污染風險 -->
+    <section>
+      <h2>火麻仁與 THC 污染風險</h2>
+      <div class="glass-card">
+        <div class="icon-title-row">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+          <h3>潤腸通便要藥：火麻仁</h3>
+        </div>
+        <ul class="custom-list">
+          <li><strong>中藥背景</strong>：即大麻的乾燥成熟果實。經烘焙炮製去活性後，在台灣法規中不列入管制毒品。</li>
+          <li><strong>禁藥污染威脅</strong>：火麻籽本身雖幾乎不含 THC，但在工業收割與碾碎製程中，**極易受到大麻葉片或花朵的交叉污染**，導致殘留 THC 進入中藥中，引起選手藥檢意外呈陽性。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 35: 時事案例：2025 年中職洋投猛登與 2026 年日排佐藤駿一郎大麻判罰案 -->
+    <section>
+      <h2>體壇案例：選手大麻違規判罰</h2>
+      <div class="glass-card warn">
+        <div class="icon-title-row warn">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h-2v-2h4v8zm0-10h-2V5h-2V3h4v4z"/></svg>
+          <h3 style="color:var(--accent-orange);">大麻違規與生涯代價</h3>
+        </div>
+        <ul class="custom-list" style="font-size:0.44em; line-height:1.6;">
+          <li><strong>中職洋投猛登案 (2025年5月)</strong>：中信兄弟投手猛登因在休賽季於國外接觸大麻，在球團春訓自主檢測中被驗出大麻陽性。球團隨即依照隊規最高標準**與猛登解除合約**。</li>
+          <li><strong>日排佐藤駿一郎案 (2026年5月)</strong>：現役日本男排國家代表隊主力快攻手佐藤駿一郎，因在小鋼珠店被查獲非法持有大麻遭警方逮捕。日本排協次日發表官方聲明，**將其從國家代表隊名單中除名**。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 36: 國際動態：泰國 2026 大麻新法規與出國參賽警示 -->
+    <section>
+      <h2>國際動態：泰國大麻管制逆轉</h2>
+      <div class="glass-card">
+        <ul class="custom-list">
+          <li><strong>合法化混亂 (2022-2025)</strong>：泰國曾為亞洲首個娛樂性大麻合法化國家，導致市售零食、軟糖（如2025年哈瑞寶軟糖被摻大麻事件）頻繁爆出受大麻素污染。</li>
+          <li><strong>2026 重典回歸 (2026年4月)</strong>：泰國政府於 2026 年 4 月 26 日正式生效限制部級法規，將大麻重新嚴格限縮為**僅限醫療用途**，持有與消費將面臨司法處罰。</li>
+          <li><strong>參賽提示</strong>：出國參賽應避免在當地購買任何標示葉片標誌的食品與飲料，防堵誤服。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 37: AIS D 類高風險補充品：蒺藜、東革阿里與瑪卡的西藥摻假 -->
+    <section>
+      <h2>補充劑摻西藥與污染風險</h2>
+      <div class="glass-card">
+        <div style="font-size:0.52em; color:#ccc; margin-bottom:12px;">
+          澳洲運動學院（AIS）警告，許多宣稱「提升性慾、增肌」的補充劑含有高度摻假風險：
+        </div>
+        <ul class="custom-list">
+          <li><strong>蒺藜 & 東革阿里</strong>：市售產品常在製程中非法添加化學類固醇以增強效果。</li>
+          <li><strong>瑪卡 (Maca, Group D)</strong>：瑪卡本身並無禁藥成分，但多個市售品牌被查獲非法摻入**西地那非 (Sildenafil，威而鋼/Viagra)** 或禁用雄性素以宣稱「強精壯陽」，對運動員威脅巨大。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 38: 【情境互動題 5】健身教練推薦的「天然瑪卡膠囊」 -->
+    <section>
+      <h2>情境模擬 5</h2>
+      <div class="scenario-box">
+        <div class="scenario-question">
+          <strong>【情境 5】</strong> 阿明在健身房訓練時，教練熱心推薦他服用一款名牌「純天然黑瑪卡膠囊」，宣稱能大幅刺激睪固酮分泌、迅速增長肌肉並消除訓練疲勞。阿明該如何做？
+        </div>
+        <div class="scenario-options" id="sc-opts-5">
+          <button class="scenario-btn" id="sc-btn-5-1" onclick="selectScenario(5, 1, false, '❌ <strong>錯誤決定！</strong> 澳洲運動學院 (AIS) 已將<strong>瑪卡 (Maca)</strong> 列為高風險的 <strong>Group D 營養補充品</strong>。市售瑪卡產品常為了強化其「壯陽/提神」宣稱效果，非法摻入 Sildenafil (威而鋼) 或同化性類固醇，服用極易導致運動禁藥違規判定！')">
+            A：立即購買並服用。教練在健身房推薦的名牌產品，且標榜純天然，肯定是安全的。
+          </button>
+          <button class="scenario-btn" id="sc-btn-5-2" onclick="selectScenario(5, 2, true, '✓ <strong>正確決定！</strong> 阿明應拒絕對方。瑪卡相關產品已被 AIS 列入 Group D (禁用或高風險污染)。市售產品極易被摻雜 Sildenafil (威而鋼) 或禁用類固醇成分，運動員應拒絕服用此類宣稱提升表現的壯陽補給品。')">
+            B：委婉拒絕。指出瑪卡已被 AIS 歸類為 Group D（高風險污染與摻西藥物質），運動員必須防範其摻入違禁睪固酮或西藥的風險。
+          </button>
+        </div>
+        <div class="scenario-feedback" id="sc-fb-5"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         MODULE 6: 臨床醫療防護與選手權益 (第 39 - 44 頁)
+         ========================================================== -->
+
+    <!-- Page 39: 國民體育法第 24 條、行蹤登錄 (Whereabouts) 與隱私權 -->
+    <section>
+      <h2>體育法治與行蹤登錄隱私權</h2>
+      <div class="glass-card">
+        <ul class="custom-list">
+          <li><strong>國體法第24條</strong>：授權教育部體育署訂定《運動禁藥管制辦法》來強制規範藥檢與禁賽罰則。</li>
+          <li><strong>法律保留疑慮</strong>：立法院法制局報告指出，行蹤登錄等限制選手基本工作與隱私權之重大行政處分，現行母法授權過於簡略，有違授權明確性原則。</li>
+          <li><strong>行蹤登錄 (Whereabouts)</strong>：RTP 選手需預先填報每日一小時行蹤供隨機無預警採樣，深涉基本權利，執行應嚴格遵守比例原則與隱私保護。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 40: 治療用途豁免 (TUE) 制度：中藥複方申請的高難度 -->
+    <section>
+      <h2>TUE 制度與中藥申請困境</h2>
+      <div class="glass-card">
+        <div style="font-size:0.52em; color:#ccc; margin-bottom:12px;">
+          運動員因疾病必須使用禁用物質時，可申請治療用途豁免（TUE），但中藥申請面臨嚴重實務困難：
+        </div>
+        <ul class="custom-list">
+          <li><strong>西藥處方申請</strong>：成分單一明確（如單一分子），臨床療效與代謝指標成熟。</li>
+          <li><strong>中藥處方困境</strong>：濃縮科學中藥粉含有上百種天然化學成分，且不同批次與生產線的化學含量存在顯著波動。</li>
+          <li><strong>審查結論</strong>：反禁藥審查機構往往無法確認中藥複方的成分均一性與劑量安全性，導致中藥複方的 TUE 審查通過率極低。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 41: TUE 申請流程與文件 -->
+    <section>
+      <h2>TUE 申請流程與防護義務</h2>
+      <div class="glass-card">
+        <ul class="custom-list">
+          <li><strong>提早申請</strong>：除緊急搶救外，TUE 必須在參賽前 <strong>30 天</strong> 提出申請。</li>
+          <li><strong>醫學證明要求</strong>：必須檢附詳盡病歷、診斷證明、病史紀錄、以及「非禁用藥物治療無效」之臨床實證文件。</li>
+          <li><strong>審查原則</strong>：若有非禁用的安全替代藥物可用，審查委員會必定駁回申請。因此臨床上「以安全中藥換藥」才是最優先策略。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 42: 臨床醫療人員防護四字口訣：「問、查、換、申」 -->
+    <section>
+      <h2>醫療人員防護口訣「問、查、換、申」</h2>
+      <div class="glass-card highlight">
+        <div style="font-size:0.52em; color:#ccc; margin-bottom:12px;">
+          隨隊醫師、中醫師與防護團隊在開立處方時，應嚴格執行以下口訣步驟：
+        </div>
+        <ul class="custom-list cyan-bullet" style="font-size:0.45em; line-height:1.7;">
+          <li><strong>問 (Ask) ── 問身分</strong>：詢問就診者是否為註冊運動員、近期是否有比賽及藥檢計畫。</li>
+          <li><strong>查 (Check) ── 查成分</strong>：逐一核對複方與單味藥材，利用 Global DRO 或 CTADA 系統查詢禁用風險。</li>
+          <li><strong>換 (Substitute) ── 換安全</strong>：發現含禁用物質（如麻黃、細辛），改以不含禁藥的安全替代藥材。</li>
+          <li><strong>申 (Apply) ── 申豁免</strong>：若臨床必須且無替代，協助準備詳盡病歷以提早申請 TUE。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Page 43: 運動員防護避雷五字訣與瘦肉精肉類污染 -->
+    <section>
+      <h2>運動員防護五字訣與瘦肉精</h2>
       <div class="grid-2">
         <div class="glass-card">
           <div class="icon-title-row">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h-2v-2h4v8zm0-10h-2V5h-2V3h4v4z"/></svg>
-            <h3>運動員安全用藥「五字訣」</h3>
+            <h3>安全用藥「五字訣」</h3>
           </div>
-          <ul class="custom-list" style="font-size:0.48em; line-height:1.6;">
-            <li><strong>停</strong>：拒絕盲目服用宣稱消除疲勞、增肌的偏方。</li>
-            <li><strong>看</strong>：確認中藥許可證字號與成分標示，拒用偏方中藥粉。</li>
-            <li><strong>查</strong>：利用 CTADA 「運動禁藥查詢系統」進行查核。</li>
-            <li><strong>問</strong>：就醫聲明身分，詢問受培訓的運動禁藥諮詢藥師。</li>
-            <li><strong>請</strong>：請醫師避開麻黃、附子、細辛，開立安全替代藥物。</li>
+          <ul class="custom-list" style="font-size:0.48em;">
+            <li><strong>停</strong>：拒服成分不明的藥物與補品。</li>
+            <li><strong>看</strong>：確認中藥許可證字號與包裝成分。</li>
+            <li><strong>查</strong>：利用 CTADA 官方系統查詢字號。</li>
+            <li><strong>問</strong>：表明運動員身分，諮詢禁藥諮詢藥師。</li>
+            <li><strong>請</strong>：請醫師避開禁藥，開立替代處方。</li>
           </ul>
         </div>
         <div class="glass-card">
           <div class="icon-title-row">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.12 0 2.05-.74 2.38-1.75 1.7.97 2.94 2.65 3.2 4.67-.09.06-.21.08-.38.08h-1.2c-.55 0-1 .45-1 1v2c0 1.1-.9 2-2 2h-1v1.93c1.93-.05 3.65-1.07 4.68-2.61z"/></svg>
-            <h3>瘦肉精肉類污染免責指引</h3>
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg>
+            <h3>瘦肉精肉類污染免責</h3>
           </div>
-          <ul class="custom-list" style="font-size:0.48em; line-height:1.6;">
-            <li><strong>WADA 肉類污染免責</strong>：食入含瘦肉精（克倫特羅）殘留肉品可能引發陽性反應。</li>
-            <li><strong>免責判定上限</strong>：尿液濃度低於 <strong>5 ng/mL</strong>。</li>
-            <li><strong>防護要求</strong>：前往污染高風險區旅行，應選擇合格餐飲並完整留存發票以利科學判定免責。</li>
+          <ul class="custom-list" style="font-size:0.48em;">
+            <li><strong>污染克倫特羅</strong>：吃下含克倫特羅瘦肉精的肉類易招致非故意藥檢陽性。</li>
+            <li><strong>WADA 免責指標</strong>：檢體濃度小於 <strong>5 ng/mL</strong>。</li>
+            <li><strong>防護義務</strong>：提供受污染區（如中國、墨西哥）之詳細旅行與消費飲食發票供科學免責判定。</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Slide 14: 封底 -->
+    <!-- Page 44: 【情境互動題 6】防護員的臨床處方決策 -->
+    <section>
+      <h2>情境模擬 6</h2>
+      <div class="scenario-box">
+        <div class="scenario-question">
+          <strong>【情境 6】</strong> 阿明是一位被列入 RTP（優秀檢查群）的排球國手，下週即將進行賽內藥檢。今天他因為重感冒伴隨嚴重支氣管氣喘前來隊醫處求診。隊醫診斷其必須服用氣喘緩解製劑，但在系統中查到常用藥物含有 S3 類禁用物質。作為醫療防護團隊，下一步該如何決策？
+        </div>
+        <div class="scenario-options" id="sc-opts-6">
+          <button class="scenario-btn" id="sc-btn-6-1" onclick="selectScenario(6, 1, false, '❌ <strong>錯誤決策！</strong> 只要是註冊運動員，賽前 TUE 申請必須提早 30 天，此處距離比賽僅剩一週，除非是生命垂危的緊急醫療救治，否則不符合緊急 TUE 條件。隊醫應立即實行「換」的步驟，尋找不含禁藥成分之安全替代療法。')">
+            A：立即開藥，並告知選手在吃完藥後馬上向 CTADA 申請「緊急治療用途豁免 (TUE)」，一邊吃藥一邊等待審查。
+          </button>
+          <button class="scenario-btn" id="sc-btn-6-2" onclick="selectScenario(6, 2, true, '✓ <strong>正確決策！</strong> 醫護人員應先執行「換」藥程序，開立不含禁用物質的替代療法。如果氣喘極其嚴重且無任何安全藥物可替代，隊醫必須暫停選手下週的參賽，並整理詳盡病歷依法提早提出 TUE 申請。')">
+            B：開立不含禁用物質的安全替代藥物。若病情嚴重無替代方案，則應暫停選手下週參賽，並依法啟動病歷整理，提早申請 TUE，待審核核可後方可參賽。
+          </button>
+        </div>
+        <div class="scenario-feedback" id="sc-fb-6"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         MODULE 7: 課程總結與安全運動 (第 45 頁)
+         ========================================================== -->
+
+    <!-- Page 45: 封底 -->
     <section>
       <div class="ending-slide">
         <div class="ending-logo">
           <svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg>
         </div>
         <h1>安全運動，智慧避雷</h1>
-        <p class="subtitle">堅守嚴格責任原則，科學處方守護競技表現</p>
+        <p class="subtitle">堅守嚴格責任原則，科學用藥捍衛競技表現</p>
+        <p style="font-size:0.35em; color:#555; margin-top:2em;">課程結束 · 感謝觀看</p>
       </div>
     </section>
 
@@ -941,13 +1445,13 @@
     if (voted) return; // 只能投一次
     voted = true;
     
-    totalVotes = 57; // 模擬總票數
+    totalVotes = 62; // 模擬總票數
     if (option === 1) {
-      mockVotes[1] = 2; // 誤判率極低
-      mockVotes[2] = 98;
-    } else {
-      mockVotes[1] = 0;
+      mockVotes[1] = 0; // 嚴格責任下醫師開藥同樣違規
       mockVotes[2] = 100;
+    } else {
+      mockVotes[1] = 2;
+      mockVotes[2] = 98;
     }
     
     // 更新 UI
@@ -1007,6 +1511,30 @@
       }
     });
   }
+
+  // === 互動三：情境題 JS 控制 ===
+  window.selectScenario = function(scId, optId, isCorrect, feedbackText) {
+    // 重置該題所有按鈕樣式
+    const container = document.getElementById(`sc-opts-${scId}`);
+    if (!container) return;
+    const buttons = container.getElementsByTagName('button');
+    for (let btn of buttons) {
+      btn.className = 'scenario-btn';
+    }
+    
+    // 設定被點擊的按鈕樣式
+    const selectedBtn = document.getElementById(`sc-btn-${scId}-${optId}`);
+    if (selectedBtn) {
+      selectedBtn.className = 'scenario-btn ' + (isCorrect ? 'correct' : 'incorrect');
+    }
+    
+    // 顯示反饋內容
+    const feedbackDiv = document.getElementById(`sc-fb-${scId}`);
+    if (feedbackDiv) {
+      feedbackDiv.innerHTML = feedbackText;
+      feedbackDiv.style.display = 'block';
+    }
+  };
 </script>
 </body>
 </html>
