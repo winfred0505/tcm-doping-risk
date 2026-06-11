@@ -599,6 +599,39 @@
       color: #889;
       letter-spacing: 0.05em;
     }
+
+    /* === 玻璃貼表格樣式 === */
+    .reveal table.glass-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.36em;
+      line-height: 1.4;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .reveal table.glass-table th {
+      background: rgba(79, 195, 247, 0.15);
+      color: var(--accent-cyan);
+      font-weight: 700;
+      padding: 6px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: left;
+    }
+    .reveal table.glass-table td {
+      padding: 6px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: #eee;
+      text-align: left;
+    }
+    .reveal table.glass-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.015);
+    }
+    .reveal table.glass-table td strong {
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -1093,19 +1126,60 @@
          MODULE 4: 麻黃與感冒方劑尿液排除臨床研究 (第 26 - 32 頁)
          ========================================================== -->
 
-    <!-- Page 26: 麻黃 (Ephedra) 與 S6 興奮劑限制：尿中麻黃鹼 10 $\mu$g/mL 閥值 -->
+    <!-- Page 26: 麻黃禁藥規範與人體代謝參數表 -->
     <section>
-      <h2>麻黃與麻黃素禁用閥值</h2>
-      <div class="glass-card">
-        <ul class="custom-list">
-          <li><strong>活性鹼類</strong>：麻黃 (Ephedra) 天然含有高濃度麻黃鹼 (Ephedrine) 與偽麻黃鹼 (Pseudoephedrine)。</li>
-          <li><strong>WADA 管制標準 (S6 興奮劑)</strong>：**僅限賽內禁用**。</li>
-          <li><strong>尿液容許閥值</strong>：
-            - 麻黃鹼尿液檢出濃度高於 **10 $\mu$g/mL** 判定為違規。
-            - 偽麻黃鹼尿液檢出濃度高於 **150 $\mu$g/mL** 判定為違規。
-          </li>
-        </ul>
-      </div>
+      <h2>麻黃禁藥規範與代謝參數</h2>
+      <table class="glass-table">
+        <thead>
+          <tr>
+            <th style="width: 22%">項目分類</th>
+            <th style="width: 28%">規範與代謝指標</th>
+            <th style="width: 50%">詳細學術數據與說明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>WADA 分類</strong></td>
+            <td>S6 類「興奮劑」 (Stimulants)</td>
+            <td>屬特定禁用物質，僅限<strong>賽內期間禁用</strong>。</td>
+          </tr>
+          <tr>
+            <td><strong>尿檢閥值</strong></td>
+            <td>麻黃鹼 &gt; <strong>10 &mu;g/mL</strong><br>偽麻黃鹼 &gt; <strong>150 &mu;g/mL</strong></td>
+            <td>尿液檢體濃度高於此臨界值判定為禁藥陽性違規。</td>
+          </tr>
+          <tr>
+            <td><strong>半衰期 (t1/2)</strong></td>
+            <td><strong>5.2 ~ 5.3 小時</strong> (平均 5-8h)</td>
+            <td>葛根湯為 5.2 &plusmn; 1.2 小時，小青龍湯為 5.3 &plusmn; 1.2 小時。</td>
+          </tr>
+          <tr>
+            <td><strong>達峰時間 (Tmax)</strong></td>
+            <td><strong>2 ~ 4 小時</strong> (或 6-8 小時)</td>
+            <td>口服科學中藥後，尿中麻黃素約於 6 小時左右達排泄高峰。</td>
+          </tr>
+          <tr>
+            <td><strong>單次最大濃度 (Cmax)</strong></td>
+            <td>葛根湯：4.35 &mu;g/mL<br>小青龍湯：3.90 &mu;g/mL</td>
+            <td>單次口服 2.5g 標準劑量，尿中濃度<strong>均未超標</strong>。</td>
+          </tr>
+          <tr>
+            <td><strong>連續蓄積濃度 (Cmax)</strong></td>
+            <td>葛根湯：<strong>39.03 &mu;g/mL</strong><br>小青龍湯：<strong>13.73 &mu;g/mL</strong></td>
+            <td><strong>🔴 嚴重超標</strong>。連續服藥 3 天（每日 3 次）蓄積超標率 &gt; 60%。</td>
+          </tr>
+          <tr>
+            <td><strong>安全停藥期</strong></td>
+            <td>賽前至少 <strong>7 至 10 天</strong></td>
+            <td>為保證尿檢低於 10 &mu;g/mL，臨床建議賽前 2 週避免使用。</td>
+          </tr>
+          <tr>
+            <td><strong>尿液 pH 影響</strong></td>
+            <td>鹼性尿延緩排除；酸性尿加速排除</td>
+            <td>弱鹼性藥物特徵。<strong>鹼性尿 (pH &gt; 7)</strong> 易蓄積，超標風險最高。</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <!-- Page 27: 2026 最新文獻：葛根湯單次服用 2.5g 之 Cmax 與半衰期 -->
@@ -1140,19 +1214,50 @@
       </div>
     </section>
 
-    <!-- Page 29: 累積超標效應：連續服用 3 天 -->
+    <!-- Page 29: 含麻黃中藥複方與運動員安全替代建議表 -->
     <section>
-      <h2>累積給藥之超標違規風險</h2>
-      <div class="glass-card highlight">
-        <div style="font-size:0.52em; color:#ccc; margin-bottom:10px;">
-          然而，若模擬常規感冒治療：**連續 3 天，每日服用 3 次（每次 2.5g）**：
-        </div>
-        <ul class="custom-list">
-          <li><strong>小青龍湯組</strong>：麻黃鹼在體內產生顯著堆積，尿檢測得排除濃度達 **13.73 $\mu$g/mL**（超標違規）。</li>
-          <li><strong>葛根湯組</strong>：藥物堆積更為嚴重，尿中麻黃鹼最高濃度飆高至 **39.03 $\mu$g/mL**（超標近 4 倍！）。</li>
-          <li><strong>防護鐵則</strong>：**中藥麻黃感冒複方只要連續服用，必定導致賽內檢測陽性！**</li>
-        </ul>
-      </div>
+      <h2>含麻黃中藥與替代建議</h2>
+      <table class="glass-table">
+        <thead>
+          <tr>
+            <th style="width: 18%">複方名稱</th>
+            <th style="width: 25%">主要治療症狀</th>
+            <th style="width: 25%">禁用化學成分與風險</th>
+            <th style="width: 15%">風險評估</th>
+            <th style="width: 17%">運動員安全替代建議</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>葛根湯</strong></td>
+            <td>感冒發熱、頭痛、項背酸痛僵硬</td>
+            <td>麻黃鹼、偽麻黃鹼（連續服用極易超標）</td>
+            <td>🔴 <span style="color:var(--accent-orange); font-weight:700;">賽內高風險</span></td>
+            <td><strong>桂枝湯</strong>、<strong>銀花散</strong>（不含麻黃，感冒初期安全選用）</td>
+          </tr>
+          <tr>
+            <td><strong>小青龍湯</strong></td>
+            <td>外感風寒、內停水飲、嚴重咳嗽氣喘</td>
+            <td>麻黃鹼、細辛（含有去甲烏藥鹼 Higenamine）</td>
+            <td>❌ <span style="color:#ff4757; font-weight:700;">極高風險</span></td>
+            <td><strong>止嗽散</strong>、<strong>二陳湯</strong>（化痰止咳，不含禁用成分）</td>
+          </tr>
+          <tr>
+            <td><strong>麻杏甘石湯</strong></td>
+            <td>肺熱壅盛之咳嗽、氣喘、身熱不惡寒</td>
+            <td>麻黃鹼</td>
+            <td>🔴 <span style="color:var(--accent-orange); font-weight:700;">賽內高風險</span></td>
+            <td><strong>桑菊飲</strong>、<strong>清肺湯</strong>（清熱宣肺，不含麻黃）</td>
+          </tr>
+          <tr>
+            <td><strong>防風通聖散</strong></td>
+            <td>外感風寒、內有蘊熱、表裡雙解、便秘</td>
+            <td>麻黃鹼</td>
+            <td>🔴 <span style="color:var(--accent-orange); font-weight:700;">賽內高風險</span></td>
+            <td><strong>防風沖劑</strong>配合<strong>黃連解毒湯</strong>及其他安全潤腸中藥</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <!-- Page 30: 半夏的隱性威脅：L-麻黃鹼的藥理機制 -->
